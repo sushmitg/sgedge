@@ -1,0 +1,20 @@
+@define-mixin tablet-portrait-up {
+  @media (min-width: 600px) {
+    @mixin-content;
+  }
+}
+@define-mixin tablet-landscape-up{
+  @media (min-width: 900px) {
+    @mixin-content;
+  }
+}
+@define-mixin desktop-up{
+  @media (min-width: 1200px) {
+    @mixin-content;
+  }
+}
+@define-mixin large-desktop-up{
+  @media (min-width: 1800px) {
+    @mixin-content;
+  }
+}

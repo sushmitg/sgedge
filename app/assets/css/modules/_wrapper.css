@@ -1,0 +1,7 @@
+.container {
+  padding: 0 18px;
+  @mixin tablet-landscape-up {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
