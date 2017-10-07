@@ -12,12 +12,14 @@ header {
     bottom: 17px;
     right: 5px;
     left: auto;
-    width: 70%;
+    width: 65%;
     top: 0;
     background: #777;
     box-shadow: 0 15px 15px #777;
-    transform: rotate(0.5deg);
     transform: rotate(0.5deg) translateZ(-1em);
+    @mixin tablet-landscape-up {
+      width: 70%;
+    }
   }
 }
 

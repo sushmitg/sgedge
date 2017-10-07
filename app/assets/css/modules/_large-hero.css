@@ -7,13 +7,15 @@
     left: 50%;
     position: absolute;
     text-align: center;
+    background-color: #fff;
     border: 1px solid #ccc;
-    transform: translate(-50%,-50%);
     box-shadow: 5px 5px 4px #ccc;
+    transform: translate(-50%,-50%);
   }
 
   &__title{
     margin: 1rem 0;
+    font-size: 3rem;
     color: mediumblue;
     text-shadow: 1px 3px #ccc;
     font-family: 'Open Sans', sans-serif;
