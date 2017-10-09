@@ -677,9 +677,6 @@ header {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
-header:after {
-    diplay: none;
-  }
 @media (min-width: 600px) {
 header:after {
       z-index: -1;
@@ -913,10 +910,10 @@ header:after {
     text-align: center;
     background-color: #fff;
     border: 1px solid #ccc;
-    -webkit-box-shadow: 5px 5px 4px #ccc;
-            box-shadow: 5px 5px 4px #ccc;
     -webkit-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   }
 @media (min-width: 600px) {
 .large-hero__text-content {

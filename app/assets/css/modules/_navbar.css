@@ -6,7 +6,6 @@ header {
   transform-style: preserve-3d;
 
   &:after {
-    diplay: none;
     @mixin tablet-portrait-up {
       z-index: -1;
       position: absolute;

@@ -69,9 +69,33 @@
 
 __webpack_require__(1);
 
-[].forEach.call(document.querySelectorAll('.on-scroll-reveal'),
-  function(el){
+// Shrink Logo on scroll
+// Look for Logo
+var header = document.querySelector('header');
+var headerPseudo = window.getComputedStyle(document.querySelector('header'), ':after')
+           .getPropertyValue('content');
+var logo = header.querySelector('.brand-logo');
+// Add Scroll Event
+document.addEventListener('scroll', function () {
+  if (window.scrollY > 100) {
+    header.style.boxShadow = "0 3px 5px rgba(57, 63, 72, 0.3)";
+    logo.style.width = "100px";
+  } else {
+    header.style.boxShadow = "";
+    logo.style.width = "";
+    headerPseudo = "";
+  }
+});
+
+
+
+// Reveal on Scroll Animation -- Waypoints.js
+[].forEach.call(document.querySelectorAll('.on-scroll-reveal'), function(el){
+    // Add class animated frome Animate.css and
+    // opacity to 0 to hide element initially...
     el.className += ' animated';
+    el.style.opacity = 0 ;
+    // adding on scroll trigger using waypoints.js
     var waypoint = new Waypoint({
       element: el,
       handler: function() {
