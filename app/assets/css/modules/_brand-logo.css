@@ -1,9 +1,12 @@
 .brand-logo {
-  width: 200px;
+  width: 100px;
   position: absolute;
   padding: 7px 5px;
   transform-origin: 0 0;
   transition: all 0.5s;
+  @mixin tablet-portrait-up {
+    width: 200px;
+  }
 
   &__shrink {
     transform: scale(0.5);

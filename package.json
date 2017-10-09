@@ -28,10 +28,13 @@
     "gulp-watch": "^4.3.11",
     "postcss-import": "^11.0.0",
     "postcss-nested": "^2.1.2",
-    "postcss-simple-vars": "^4.1.0"
+    "postcss-simple-vars": "^4.1.0",
+    "webpack": "^3.6.0"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "normalize.css": "^7.0.0",
-    "particle.js": "^1.0.7"
+    "particle.js": "^1.0.7",
+    "waypoints": "^4.0.1"
   }
 }

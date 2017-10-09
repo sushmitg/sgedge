@@ -1,8 +1,14 @@
 @import "normalize.css";
+@import "animate.css/animate.min.css";
 @import "base/_global";
 @import "base/_variables";
 @import "base/_mixins";
+@import "modules/_heading";
+@import "modules/_paragraph";
 @import "modules/_wrapper";
+@import "modules/_page-section";
 @import "modules/_navbar";
 @import "modules/_brand-logo";
+@import "modules/_hamburger";
 @import "modules/_large-hero";
+@import "modules/_row";

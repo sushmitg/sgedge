@@ -1,22 +1,33 @@
 .large-hero{
-  height: 100vh;
+  height: 40vh;
   position: relative;
+  background-attachment: fixed;
+  background-image: url(https://www.transparenttextures.com/patterns/skulls.png);
+
+  @mixin tablet-landscape-up {
+    height: 95vh;
+  }
 
   &__text-content {
     top: 50%;
     left: 50%;
+    width: 70%;
     position: absolute;
     text-align: center;
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 5px 5px 4px #ccc;
     transform: translate(-50%,-50%);
+
+    @mixin tablet-portrait-up{
+      width: auto;
+    }
   }
 
   &__title{
     margin: 1rem 0;
-    font-size: 3rem;
-    color: mediumblue;
+    font-size: 3.5rem;
+    color: $mainBlue;
     text-shadow: 1px 3px #ccc;
     font-family: 'Open Sans', sans-serif;
     @mixin tablet-portrait-up {
@@ -27,9 +38,13 @@
   &__subtitle{
     margin: 0;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-family: fantasy;
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem;
     background: rgba(255,0,0,0.9);
+
+    @mixin tablet-portrait-up {
+      font-size: 2.5rem;
+    }
   }
 }

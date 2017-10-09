@@ -6,44 +6,76 @@ header {
   transform-style: preserve-3d;
 
   &:after {
-    z-index: -1;
-    position: absolute;
-    content: "";
-    bottom: 17px;
-    right: 5px;
-    left: auto;
-    width: 65%;
-    top: 0;
-    background: #777;
-    box-shadow: 0 15px 15px #777;
-    transform: rotate(0.5deg) translateZ(-1em);
+    diplay: none;
+    @mixin tablet-portrait-up {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 17px;
+      right: 5px;
+      left: auto;
+      width: 65%;
+      top: 0;
+      background: #777;
+      box-shadow: 0 15px 15px #777;
+      transform: rotate(0.5deg) translateZ(-1em);
+    }
     @mixin tablet-landscape-up {
       width: 70%;
     }
   }
 }
 
-.menu {
-  margin: 0;
+.navbar {
   text-align: right;
-  list-style: none;
-
-  &__item {
-    display: inline-block;
+  border-bottom: 1px solid #ccc;
+  @mixin tablet-portrait-up {
+    border: none;
   }
+}
 
-  &__link {
+.menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  text-align: center;
+  list-style: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  @mixin tablet-portrait-up {
+    padding: 0;
     display: block;
+    height: auto;
+    position: static;
+    text-align: right;
+  }
+  &__item {
+    display: block;
+    @mixin tablet-portrait-up {
+      display: inline-block;
+    }
+  }
+  &__link {
+    display: inline-block;
     text-decoration: none;
+    border-bottom: 2px solid $mainRed;
     padding: 1rem 1.225rem;
-    color: #f42837;
+    margin-bottom: 5px;
+    color: $mainRed;
     font-size: 1.2rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
+    @mixin tablet-portrait-up {
+      border: none;
+      margin: 0;
+    }
   }
-
-  &__link:hover{
-    background-color: #f42837;
+  &__link:hover {
+    background-color: $mainRed;
     color: #fff;
   }
 }
