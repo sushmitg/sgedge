@@ -69,14 +69,103 @@
 
 __webpack_require__(1);
 
+
+function attach(element, listener, ev, tf) {
+
+  if (element.attachEvent) {
+
+    element.attachEvent("on" + listener, ev);
+
+  } else {
+
+    element.addEventListener(listener, ev, tf);
+
+  }
+
+}
+
+function fadeOut(element, startLevel, endLevel, duration, callback) {
+
+  var fOInt;
+
+  op = startLevel;
+
+  fOInt = setInterval(function() {
+
+    if (op <= endLevel) {
+
+      element.style.opacity = endLevel;
+      element.style.filter = "alpha(opacity = " + endLevel + ")";
+
+      clearInterval(fOInt);
+
+      if (typeof callback == 'function') callback(true);
+
+    } else {
+
+      op -= 0.1;
+      console.log(op);
+      element.style.opacity = op;
+      element.style.filter = "alpha(opacity = " + op * 100 + ")";
+
+    }
+
+  }, duration);
+
+}
+var loader = document.querySelector('.loader');
+
+attach(window, 'load', function() {
+  fadeOut(loader, 1, 0, 50, function(cb) {
+    loader.style.display = 'none';
+  });
+
+}, false);
+
+// function fadeOut(el){
+//   el.style.opacity = 1;
+//
+//   (function fade() {
+//     if ((el.style.opacity -= .1) < 0) {
+//       el.style.display = "none";
+//     } else {
+//       requestAnimationFrame(fade);
+//     }
+//   })();
+// };
+//
+// window.addEventListener('load', fadeOut(el));
+
+// // Show loader while page loads....
+// function onReady(callback) {
+//     var intervalID = window.setInterval(checkReady, 2000);
+//     function checkReady() {
+//         if (document.getElementsByTagName('body')[0] !== undefined) {
+//             window.clearInterval(intervalID);
+//             callback.call(this);
+//         }
+//     }
+// }
+//
+// function show(el, value) {
+//     document.querySelector(el).style.display = value ? 'block' : 'none';
+// }
+//
+// onReady(function () {
+//     show('.loader', false);
+//     show('body', true);
+// });
+
+
+
 // Shrink Logo on scroll
 // Look for Logo
 var header = document.querySelector('header');
 var headerPseudo = window.getComputedStyle(document.querySelector('header'), ':after')
-           .getPropertyValue('content');
+  .getPropertyValue('content');
 var logo = header.querySelector('.brand-logo');
 // Add Scroll Event
-document.addEventListener('scroll', function () {
+document.addEventListener('scroll', function() {
   if (window.scrollY > 100) {
     header.style.boxShadow = "0 3px 5px rgba(57, 63, 72, 0.3)";
     logo.style.width = "100px";
@@ -90,21 +179,20 @@ document.addEventListener('scroll', function () {
 
 
 // Reveal on Scroll Animation -- Waypoints.js
-[].forEach.call(document.querySelectorAll('.on-scroll-reveal'), function(el){
-    // Add class animated frome Animate.css and
-    // opacity to 0 to hide element initially...
-    el.className += ' animated';
-    el.style.opacity = 0 ;
-    // adding on scroll trigger using waypoints.js
-    var waypoint = new Waypoint({
-      element: el,
-      handler: function() {
-        this.element.className += ' fadeInUp';
-      },
-      offset: '80%'
-    })
-  }
-);
+[].forEach.call(document.querySelectorAll('.on-scroll-reveal'), function(el) {
+  // Add class animated frome Animate.css and
+  // opacity to 0 to hide element initially...
+  el.className += ' animated';
+  el.style.opacity = 0;
+  // adding on scroll trigger using waypoints.js
+  var waypoint = new Waypoint({
+    element: el,
+    handler: function() {
+      this.element.className += ' fadeInUp';
+    },
+    offset: '80%'
+  })
+});
 
 
 // Look for .hamburger
