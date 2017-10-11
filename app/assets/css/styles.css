@@ -3,10 +3,13 @@
 @import "base/_global";
 @import "base/_variables";
 @import "base/_mixins";
+@import "base/_btn";
+@import "modules/_onscrollreveal";
 @import "modules/_heading";
 @import "modules/_paragraph";
 @import "modules/_wrapper";
 @import "modules/_page-section";
+@import "modules/_parallax";
 @import "modules/_navbar";
 @import "modules/_brand-logo";
 @import "modules/_hamburger";

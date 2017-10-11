@@ -104,7 +104,6 @@ function fadeOut(element, startLevel, endLevel, duration, callback) {
     } else {
 
       op -= 0.1;
-      console.log(op);
       element.style.opacity = op;
       element.style.filter = "alpha(opacity = " + op * 100 + ")";
 
@@ -119,6 +118,10 @@ attach(window, 'load', function() {
   fadeOut(loader, 1, 0, 50, function(cb) {
     loader.style.display = 'none';
   });
+
+  var heroText = document.querySelector('.large-hero__text-content');
+
+  heroText.classList += ' fadeInUp--Hero';
 
 }, false);
 
@@ -161,18 +164,15 @@ attach(window, 'load', function() {
 // Shrink Logo on scroll
 // Look for Logo
 var header = document.querySelector('header');
-var headerPseudo = window.getComputedStyle(document.querySelector('header'), ':after')
-  .getPropertyValue('content');
 var logo = header.querySelector('.brand-logo');
 // Add Scroll Event
 document.addEventListener('scroll', function() {
   if (window.scrollY > 100) {
-    header.style.boxShadow = "0 3px 5px rgba(57, 63, 72, 0.3)";
-    logo.style.width = "100px";
+    header.classList.add('shadow');
+    logo.classList.add('brand-logo__shrink');
   } else {
-    header.style.boxShadow = "";
-    logo.style.width = "";
-    headerPseudo = "";
+    header.classList.remove('shadow');
+    logo.classList.remove('brand-logo__shrink');
   }
 });
 

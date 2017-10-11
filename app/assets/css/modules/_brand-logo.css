@@ -7,9 +7,9 @@
   @mixin tablet-portrait-up {
     width: 200px;
   }
-
-  &__shrink {
-    transform: scale(0.5);
-    background: transparent;
+  @mixin tablet-portrait-up{
+    &__shrink {
+      transform: scale(0.6);
+    }
   }
 }

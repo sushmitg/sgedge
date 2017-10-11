@@ -1,0 +1,18 @@
+.parallax{
+  background-image: url(../../assets/images/printing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 450px;
+  position: relative;
+
+  & .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(237, 28, 36, 0.6);
+  }
+}

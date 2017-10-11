@@ -22,11 +22,18 @@
     @mixin tablet-portrait-up{
       width: auto;
     }
+    &.fadeInUp--Hero{
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-delay: .8s;
+      animation-name: fadeInUp2;
+    }
+
   }
 
   &__title{
     margin: 1rem 0;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: $mainBlue;
     text-shadow: 1px 3px #ccc;
     font-family: 'Open Sans', sans-serif;
@@ -46,5 +53,17 @@
     @mixin tablet-portrait-up {
       font-size: 2.5rem;
     }
+  }
+}
+
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%,-100%,0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%,-50%);
   }
 }

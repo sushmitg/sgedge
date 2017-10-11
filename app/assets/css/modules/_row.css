@@ -7,6 +7,7 @@
 
   &--gutters > div {
     padding-right: 65px;
+    margin-bottom: 35px;
   }
 
   @mixin tablet-portrait-up {

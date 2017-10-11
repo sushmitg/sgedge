@@ -1,0 +1,62 @@
+.btn {
+  font-size: 14px;
+  color: #ed1c24;
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-color: #ed1c24;
+  border: 1px solid #ed1c24;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:before, &:after {
+    background-color: #ed1c24;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    left: 50%;
+  }
+
+  &:before, &:after, & span:before, & span:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 25.25%;
+    background-color: #ed1c24;
+    transition: all 500ms;
+    transition-timing-function: ease-out;
+  }
+
+  & span:before, & span:after {
+  top: auto;
+  bottom: 0;
+  }
+
+  & span:before {
+    left: 25%;
+  }
+
+  & span:after {
+    left: 75%;
+  }
+
+  &:hover:before, &:hover:after, &:hover span:before, &:hover span:after {
+    height: 100%;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
+}
