@@ -632,11 +632,14 @@ a:hover, a:focus {
   cursor: pointer;
   z-index: 0;
 }
-.btn:hover {
+.btn--white {
+    border-color: #fff;
+  }
+.btn:hover, .btn--white {
     color: #fff;
   }
-.btn:before, .btn:after {
-    background-color: #ed1c24;
+.btn--white:hover {
+    color: #ed1c24;
   }
 .btn:before {
     left: 0;
@@ -657,6 +660,9 @@ a:hover, a:focus {
     -webkit-transition-timing-function: ease-out;
             transition-timing-function: ease-out;
   }
+.btn--white:before, .btn--white:after, .btn--white span:before, .btn--white span:after {
+    background-color: #fff;
+  }
 .btn span:before, .btn span:after {
   top: auto;
   bottom: 0;
@@ -672,10 +678,14 @@ a:hover, a:focus {
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
             transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   }
+.btn--animated {
+    -webkit-animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
+            animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
+  }
 .fadeInUp{
     -webkit-animation-duration: 2s;
             animation-duration: 2s;
-  }
+}
 .heading {
   display: inline-block;
   padding-top: 1rem;
@@ -700,13 +710,13 @@ a:hover, a:focus {
 .heading--right {
     text-align: right;
   }
-.paragraph {
-  margin: 0;
-  margin-top: -7px;
-  text-align: justify;
-  font-size: 1.125rem;
-  line-height: 1.5;
-}
+.heading--center {
+    border: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #f42837;
+    text-shadow: 1px 1px 1px #000;
+  }
 .container {
   padding: 0 15px;
   overflow: hidden;
@@ -731,26 +741,38 @@ a:hover, a:focus {
   }
 .page-section {
   padding: 4.5rem 0;
+  background-color: #fff;
 }
 .page-section--dark {
     background-color: #161616;
   }
 .parallax{
+  min-height: 400px;
+  position: relative;
+  padding: 2.5rem 0;
   background-image: url(../../assets/images/printing.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 450px;
-  position: relative;
 }
-.parallax .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(237, 28, 36, 0.6);
+.parallax.overlay{
+    position: relative;
+  }
+.parallax.overlay:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      opacity: .5;
+      background-color: red;
+      background: rgba(237, 28, 36, 0.6);
+    }
+.parallax .paragraph {
+    margin-bottom: 40px;
   }
 header {
   top: 0;
@@ -790,11 +812,11 @@ header:after {
   }
 .navbar {
   text-align: right;
-  border-bottom: 1px solid #ccc;
 }
 @media (min-width: 600px) {
 .navbar {
-    border: none
+    border: none;
+    margin-right: -1.225rem
 }
   }
 .menu {
@@ -857,7 +879,7 @@ header:after {
 .brand-logo {
   width: 100px;
   position: absolute;
-  padding: 7px 5px;
+  padding-top: 7px;
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
   -webkit-transition: all 0.5s;
@@ -991,6 +1013,7 @@ header:after {
   height: 40vh;
   position: relative;
   background-attachment: fixed;
+  background-color: #fff;
   background-image: url(https://www.transparenttextures.com/patterns/skulls.png);
 }
 @media (min-width: 900px) {
@@ -1107,6 +1130,10 @@ header:after {
       float: left;
       width: 75%;
     }
+    .row__12 {
+      float: left;
+      width: 100%;
+    }
   }
 .loader {
   position: fixed;
@@ -1126,8 +1153,8 @@ header:after {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: rotateZ(45deg) translate(-50%, -50%);
-          transform: rotateZ(45deg) translate(-50%, -50%);
+  -webkit-transform: rotateZ(45deg) translate(-100%, -50%);
+          transform: rotateZ(45deg) translate(-100%, -50%);
 }
 .sk-folding-cube .sk-cube {
   float: left;
@@ -1207,4 +1234,49 @@ header:after {
             transform: perspective(140px) rotateY(180deg);
     opacity: 0;
   }
+}
+.paragraph, .introduction--text {
+  margin: 0;
+  margin-top: -6px;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+@media (min-width: 600px) {
+.paragraph, .introduction--text {
+    font-size: 1.125rem
+}
+  }
+.introduction--text {
+  margin: 0;
+  margin-bottom: 40px;
+}
+.introduction--text--justify{
+    margin: 0;
+    text-align: justify;
+  }
+@media (min-width: 900px) {
+    .introduction--text--underline{
+      line-height: 2.3;
+      font-size: 1.25rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      text-align: justify;
+    }
+  }
+.text--red {
+    color: #f42837;
+  }
+.text--white {
+    color: #fff;
+  }
+.text--center {
+    text-align: center;
+  }
+footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -999;
+  position: fixed;
 }

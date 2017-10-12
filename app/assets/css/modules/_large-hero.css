@@ -2,6 +2,7 @@
   height: 40vh;
   position: relative;
   background-attachment: fixed;
+  background-color: #fff;
   background-image: url(https://www.transparenttextures.com/patterns/skulls.png);
 
   @mixin tablet-landscape-up {

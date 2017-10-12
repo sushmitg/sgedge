@@ -6,7 +6,6 @@
 @import "base/_btn";
 @import "modules/_onscrollreveal";
 @import "modules/_heading";
-@import "modules/_paragraph";
 @import "modules/_wrapper";
 @import "modules/_page-section";
 @import "modules/_parallax";
@@ -16,3 +15,5 @@
 @import "modules/_large-hero";
 @import "modules/_row";
 @import "modules/_loader";
+@import "modules/_text";
+@import "modules/_footer";

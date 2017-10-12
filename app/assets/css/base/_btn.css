@@ -14,12 +14,16 @@
   cursor: pointer;
   z-index: 0;
 
-  &:hover {
+  &--white {
+    border-color: #fff;
+  }
+
+  &:hover, &--white {
     color: #fff;
   }
 
-  &:before, &:after {
-    background-color: #ed1c24;
+  &--white:hover {
+    color: #ed1c24;
   }
 
   &:before {
@@ -42,6 +46,10 @@
     transition-timing-function: ease-out;
   }
 
+  &--white:before, &--white:after, &--white span:before, &--white span:after {
+    background-color: #fff;
+  }
+
   & span:before, & span:after {
   top: auto;
   bottom: 0;
@@ -58,5 +66,9 @@
   &:hover:before, &:hover:after, &:hover span:before, &:hover span:after {
     height: 100%;
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
+
+  &--animated {
+    animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
   }
 }

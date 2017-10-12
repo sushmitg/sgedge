@@ -1,18 +1,31 @@
 .parallax{
+  min-height: 400px;
+  position: relative;
+  padding: 2.5rem 0;
   background-image: url(../../assets/images/printing.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 450px;
-  position: relative;
 
-  & .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(237, 28, 36, 0.6);
+  &.overlay{
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      opacity: .5;
+      background-color: red;
+      background: rgba(237, 28, 36, 0.6);
+    }
+  }
+
+  & .paragraph {
+    margin-bottom: 40px;
   }
 }

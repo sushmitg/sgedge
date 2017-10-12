@@ -1,0 +1,42 @@
+.paragraph, .introduction--text {
+  margin: 0;
+  margin-top: -6px;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 1rem;
+
+  @mixin tablet-portrait-up {
+    font-size: 1.125rem;
+  }
+}
+
+.introduction--text {
+  margin: 0;
+  margin-bottom: 40px;
+  &--justify{
+    margin: 0;
+    text-align: justify;
+  }
+
+  @mixin tablet-landscape-up {
+    &--underline{
+      line-height: 2.3;
+      font-size: 1.25rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      text-align: justify;
+    }
+  }
+}
+
+.text {
+  &--red {
+    color: $mainRed;
+  }
+  &--white {
+    color: #fff;
+  }
+  &--center {
+    text-align: center;
+  }
+}

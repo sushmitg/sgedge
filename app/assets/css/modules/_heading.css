@@ -21,4 +21,12 @@
   &--right {
     text-align: right;
   }
+
+  &--center {
+    border: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 5px solid $mainRed;
+    text-shadow: 1px 1px 1px #000;
+  }
 }

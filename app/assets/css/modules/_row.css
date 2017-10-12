@@ -20,5 +20,9 @@
       float: left;
       width: 75%;
     }
+    &__12 {
+      float: left;
+      width: 100%;
+    }
   }
 }
