@@ -68,6 +68,22 @@ document.addEventListener('scroll', function() {
   })
 });
 
+// External Links Cool animation icon
+[].forEach.call(document.querySelectorAll('a[target="_blank"]'), function(el) {
+  el.innerHTML += "<i><hr><hr><hr><hr><hr></i>";
+});
+
+// Delay redirect by .6s for anchor tags with .btn class
+[].forEach.call(document.querySelectorAll('a.btn'), function(el) {
+  el.addEventListener("click", function(e) {
+    e.preventDefault();
+    var URL = this.href
+    setTimeout(function() {
+      window.location.href = URL
+    }, 700);
+  });
+});
+
 // Mobile hamburger Click functionality
 // Look for .hamburger
 var hamburger = document.querySelector(".hamburger");
@@ -77,35 +93,32 @@ hamburger.addEventListener("click", function() {
   // Toggle class "is-active"
   hamburger.classList.toggle("is-active");
   // Do something else, like open/close menu
-  if (menu.style.display === "none" || menu.style.display === "") {
-    menu.style.display = "block";
-  } else {
-    menu.style.display = "none";
-  }
 });
 
+function hasClass(element, findclass) {
+  return (' ' + element.className + ' ').indexOf(' ' + findclass + ' ') > -1;
+}
+
 // Hide Menu when clicked on anchor
-menu.addEventListener("click", function (e) {
-  if (e.target.nodeName = "A") {
-    menu.style.display = "none"
+menu.addEventListener("click", function(e) {
+  if (e.target.nodeName = "A" && hasClass(hamburger, "is-active")) {
     hamburger.classList.toggle("is-active");
   }
 });
 
 //Contact Us section Bottom Margin equals to Footer height for Reveal Parallax effect.
 function getStyle(oElm, strCssRule) {
- 	var strValue = "";
- 	if(document.defaultView && document.defaultView.getComputedStyle){
- 		strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
- 	}
- 	else if(oElm.currentStyle){
- 		strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
- 			return p1.toUpperCase();
- 		});
- 		strValue = oElm.currentStyle[strCssRule];
- 	}
- 	return strValue;
+  var strValue = "";
+  if (document.defaultView && document.defaultView.getComputedStyle) {
+    strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+  } else if (oElm.currentStyle) {
+    strCssRule = strCssRule.replace(/\-(\w)/g, function(strMatch, p1) {
+      return p1.toUpperCase();
+    });
+    strValue = oElm.currentStyle[strCssRule];
+  }
+  return strValue;
 }
 
 var footerHeight = getStyle(document.querySelector('footer'), "height");
-document.querySelector('#contact-us').style.marginBottom =  footerHeight;
+document.querySelector('#contact-us').style.marginBottom = footerHeight;

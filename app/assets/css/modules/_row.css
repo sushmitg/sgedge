@@ -1,6 +1,10 @@
 .row {
   @mixin clearfix;
 
+  & div{
+    position: relative;
+  }
+
   &--gutters {
     margin-right: -65px;
   }
@@ -8,21 +12,66 @@
   &--gutters > div {
     padding-right: 65px;
     margin-bottom: 35px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+      @mixin tablet-portrait-up {
+        margin-bottom: 0;
+      }
   }
-
+  &__offset--2-xs {
+    margin-left: 16.666%;
+  }
   @mixin tablet-portrait-up {
+    &__1{
+      float: left;
+      width: 8.33333333%;
+    }
     &__3 {
       float: left;
       width: 25%;
+      &-push-9{
+        left: 75%;
+      }
     }
-
+    &__4 {
+      float: left;
+      width: 33.33%;
+    }
+    &__6 {
+      float: left;
+      width: 50%;
+    }
     &__9 {
       float: left;
       width: 75%;
+      &-pull-3 {
+        right: 25%;
+      }
     }
     &__12 {
       float: left;
       width: 100%;
+    }
+    &__offset--0{
+      margin-left: 0;
+    }
+    &__offset--3{
+      margin-left: 25%;
+    }
+    &__offset--4{
+      margin-left: 33.33333333%;
+    }
+  }
+
+  @mixin tablet-landscape-up {
+    &__4--md {
+      float: left;
+      width: 33.33%;
+    }
+
+    &__offset--0--md{
+      margin-left: 0;
     }
   }
 }

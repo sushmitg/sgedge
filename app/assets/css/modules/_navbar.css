@@ -11,22 +11,20 @@ header {
   }
 
   &:after {
-    @mixin tablet-portrait-up {
-      z-index: -1;
-      position: absolute;
-      content: "";
-      bottom: 17px;
-      right: 5px;
-      left: auto;
-      width: 65%;
-      top: 0;
-      background: #777;
-      box-shadow: 0 15px 15px #777;
-      transform: rotate(0.5deg) translateZ(-1em);
-    }
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 17px;
+    right: 5px;
+    left: auto;
+    width: 100%;
+    top: 0;
+    background: #777;
+    box-shadow: 0 15px 15px #777;
+    transform: rotate(0.5deg) translateZ(-1em);
 
-    @mixin tablet-landscape-up {
-      width: 70%;
+    @mixin tablet-portrait-up {
+      width: 65%;
     }
   }
 }
@@ -35,22 +33,18 @@ header {
   text-align: right;
 
   @mixin tablet-portrait-up {
-    border: none;
     margin-right: -1.225rem;
   }
 }
 
 .menu {
-  display: none;
   margin: 0;
   padding: 0;
-  padding-top: 50px;
   text-align: center;
   list-style: none;
-  position: fixed;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 0;
   background: rgba(255, 255, 255, 0.9);
 
   @mixin tablet-portrait-up {
@@ -60,13 +54,44 @@ header {
     position: static;
     text-align: right;
   }
+
+  .hamburger--emphatic.is-active ~ & {
+    height: 100%;
+  }
+
   &__item {
     display: block;
 
+    &:last-child {
+      margin-bottom: 50px;
+    }
+
     @mixin tablet-portrait-up {
       display: inline-block;
+      margin: 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    .hamburger--emphatic ~ .menu &:nth-child(even) {
+      transform: translateX(-100%);
+    }
+    .hamburger--emphatic ~ .menu &:nth-child(odd) {
+      transform: translateX(+100%);
+    }
+    .hamburger--emphatic.is-active ~ .menu & {
+      transform: translateX(0);
+    }
+    .hamburger--emphatic ~ .menu &:nth-child(n) {
+      transition: transform 1s ease-in-out;
+      @mixin tablet-portrait-up {
+        transform: translateX(0);
+      }
     }
   }
+
   &__link {
     color: $mainRed;
     font-weight: 800;
@@ -87,6 +112,7 @@ header {
       padding: 1rem 1.225rem;
     }
   }
+
   &__link:hover {
     background-color: $mainRed;
     color: #fff;

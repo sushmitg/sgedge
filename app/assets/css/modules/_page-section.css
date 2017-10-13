@@ -1,8 +1,14 @@
 .page-section {
   padding: 4.5rem 0;
   background-color: #fff;
-  
+
   &--dark {
     background-color: $darkGrey;
+  }
+  &.why-us {
+    background-image: url(../../assets/images/printing.jpg);
+  }
+  &.partners {
+    background-image: url(../../assets/images/partners.jpg);
   }
 }

@@ -16,8 +16,15 @@ img {
 
 a {
   text-decoration: none;
-  
+
   &:hover, &:focus {
     text-decoration: none;
+  }
+}
+
+h5{
+  &.rotated{
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
   }
 }

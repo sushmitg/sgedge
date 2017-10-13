@@ -6,7 +6,7 @@
   background-image: url(https://www.transparenttextures.com/patterns/skulls.png);
 
   @mixin tablet-landscape-up {
-    height: 95vh;
+    height: 65vh;
   }
 
   &__text-content {

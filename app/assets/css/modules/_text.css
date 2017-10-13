@@ -12,7 +12,7 @@
 
 .introduction--text {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   &--justify{
     margin: 0;
     text-align: justify;
@@ -38,5 +38,8 @@
   }
   &--center {
     text-align: center;
+    .paragraph& {
+      text-shadow: 1px 1px 1px #000;
+    }
   }
 }
