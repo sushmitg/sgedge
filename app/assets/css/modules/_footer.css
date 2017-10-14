@@ -47,7 +47,7 @@ footer {
         line-height: 38px;
       }
       &:hover:before{
-        color: #6a4d8a;
+        color: $mainRed;
       }
       &:before {
         content: "";

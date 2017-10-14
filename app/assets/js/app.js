@@ -53,10 +53,12 @@ document.addEventListener('scroll', function() {
 [].forEach.call(document.querySelectorAll('.on-scroll-reveal'), function(el) {
   var animationClass = el.dataset.animation;
   var offset = el.dataset.offset;
+  var delay = el.dataset.animationdelay;
   // Add class animated frome Animate.css and
   el.classList.add('animated');
   // opacity to 0 to hide element initially...
   el.style.opacity = '0';
+  el.style.animationDelay = delay;
   // adding on scroll trigger using waypoints.js
   var waypoint = new Waypoint({
     element: el,

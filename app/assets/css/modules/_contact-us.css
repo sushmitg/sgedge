@@ -1,22 +1,47 @@
-#contact-us h1{
-  @mixin tablet-landscape-up{
-    margin-top: 0;
+#contact-us {
+  & h1 {
+    @mixin tablet-landscape-up {
+      margin-top: 0;
+    }
+  }
+  & br {
+    &.mobile--visible {
+      display: block;
+    }
+    &.mobile--hidden {
+      display: none;
+    }
+    &.tablet--visible {
+      @mixin tablet-portrait-up {
+        display: block;
+      }
+    }
+    &.tablet--hidden {
+      @mixin tablet-portrait-up {
+        display: none;
+      }
+    }
+    &.laptop--hidden {
+      @mixin tablet-portrait-up {
+        display: none;
+      }
+    }
   }
 }
 
-.address{
+.address {
   margin-left: 16.666%;
   @mixin tablet-portrait-up {
     margin-left: 8.333%;
   }
-
   &:before {
     content: "Address";
     top: 50%;
     left: -50px;
     font-size: 2rem;
     position: absolute;
-    transform: translate(-50%, -50%) rotate(-90deg);;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    ;
   }
 }
 

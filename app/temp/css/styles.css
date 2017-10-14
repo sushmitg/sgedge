@@ -688,7 +688,7 @@ h5.rotated{
     -webkit-animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
             animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
   }
-.fadeInUp{
+.fadeInUp, .fadeInRight{
     -webkit-animation-duration: 2s;
             animation-duration: 2s;
 }
@@ -1419,7 +1419,7 @@ footer .row__3 {
     }
   }
 .widget ul li:hover:before{
-        color: #6a4d8a;
+        color: #f42837;
       }
 .widget ul li:before {
         content: "";
@@ -1618,15 +1618,36 @@ a:hover > i hr:nth-of-type(5) {
 			transition: transform .5s .5s, -webkit-transform .5s .5s;
 		}
 @media (min-width: 900px) {
-#contact-us h1{
-    margin-top: 0
-}
+#contact-us h1 {
+      margin-top: 0
   }
-.address{
+  }
+#contact-us br.mobile--visible {
+      display: block;
+    }
+#contact-us br.mobile--hidden {
+      display: none;
+    }
+@media (min-width: 600px) {
+#contact-us br.tablet--visible {
+        display: block
+    }
+  }
+@media (min-width: 600px) {
+#contact-us br.tablet--hidden {
+        display: none
+    }
+  }
+@media (min-width: 600px) {
+#contact-us br.laptop--hidden {
+        display: none
+    }
+  }
+.address {
   margin-left: 16.666%;
 }
 @media (min-width: 600px) {
-.address{
+.address {
     margin-left: 8.333%
 }
   }
@@ -1637,7 +1658,8 @@ a:hover > i hr:nth-of-type(5) {
     font-size: 2rem;
     position: absolute;
     -webkit-transform: translate(-50%, -50%) rotate(-90deg);
-            transform: translate(-50%, -50%) rotate(-90deg);;
+            transform: translate(-50%, -50%) rotate(-90deg);
+    ;
   }
 address {
   padding: 15px;
