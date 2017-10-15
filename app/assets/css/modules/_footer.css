@@ -4,7 +4,7 @@ footer {
   bottom: 0;
   z-index: -999;
   position: fixed;
-  &.footer--dark{
+  &.footer--dark {
     padding-top: 3rem;
     padding-bottom: 0;
     background-color: #292825;
@@ -13,7 +13,8 @@ footer {
     margin-bottom: 0;
   }
 }
-.bottom-footer{
+
+.bottom-footer {
   color: #fff;
   margin-top: 30px;
   text-align: center;
@@ -28,7 +29,6 @@ footer {
     color: #fff;
     margin: 15px 0;
     @mixin tablet-portrait-up {
-
       margin: 0 0 20px;
     }
     & h5 {
@@ -43,24 +43,22 @@ footer {
       padding-left: 20px;
       position: relative;
       line-height: 25px;
-      @mixin tablet-portrait-up{
+      @mixin tablet-portrait-up {
         line-height: 38px;
       }
-      &:hover:before{
+      &:hover:before {
         color: $mainRed;
       }
       &:before {
-        content: "";
-        font-family: FontAwesome;
-        color: rgb(140, 151, 158);
+        left: 0;
         position: absolute;
-        left: 0px;
+        color: rgb(140, 151, 158);
         line-height: 25px;
-        @mixin tablet-portrait-up{
+        @mixin tablet-portrait-up {
           line-height: 38px;
         }
       }
-      & a{
+      & a {
         color: $textDark;
         display: block;
         transition: all .3s;
@@ -73,5 +71,26 @@ footer {
   & h5, & ul {
     margin: 0;
     padding: 0;
+  }
+}
+
+.footer-hours {
+  background: #1b1b20;
+  border: 1px dashed #da3038;
+  padding: 20px 35px;
+}
+
+.footer-hours div {
+  color: $textDark;
+  line-height: 1.5;
+}
+
+.footer-hours span {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  @mixin tablet-portrait-up {
+    line-height: 2;
   }
 }

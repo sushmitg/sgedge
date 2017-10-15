@@ -4,48 +4,53 @@
       margin-top: 0;
     }
   }
-  & br {
-    &.mobile--visible {
-      display: block;
-    }
-    &.mobile--hidden {
-      display: none;
-    }
-    &.tablet--visible {
-      @mixin tablet-portrait-up {
-        display: block;
-      }
-    }
-    &.tablet--hidden {
-      @mixin tablet-portrait-up {
-        display: none;
-      }
-    }
-    &.laptop--hidden {
-      @mixin tablet-portrait-up {
-        display: none;
-      }
-    }
-  }
+}
+
+address, .contacts {
+  padding: 15px;
+  border-left: 5px solid yellow;
 }
 
 .address {
-  margin-left: 16.666%;
   @mixin tablet-portrait-up {
     margin-left: 8.333%;
   }
   &:before {
     content: "Address";
-    top: 50%;
+    top: 46%;
     left: -50px;
     font-size: 2rem;
     position: absolute;
     transform: translate(-50%, -50%) rotate(-90deg);
-    ;
   }
 }
 
-address {
-  padding: 15px;
-  border-left: 5px solid yellow;
+.contacts {
+  padding: 0 7px;
+  @mixin tablet-portrait-up {
+    padding: 0 15px;
+  }
+  a[href^="tel:"]:before {
+    content: "\1F4F1";
+    font-size: 1.5rem;
+    margin-right: 0.50em;
+    margin-left: 0em;
+    @mixin tablet-portrait-up {
+      margin-right: 0.75em;
+      margin-left: 0.25em;
+    }
+  }
+  a[href^="mailto:"]:before {
+    content: "\1F4E7";
+    font-size: 1.5rem;
+    margin-right: 0.5em;
+  }
+}
+.call:before {
+  content: "Call / E-mail";
+  top: 53%;
+  left: -50px;
+  font-size: 2rem;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-90deg);
 }

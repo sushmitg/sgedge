@@ -1,13 +1,13 @@
 var gulp = require('gulp'),
-postcss = require('gulp-postcss'),
-autoprefixer = require('autoprefixer'),
-nested = require('postcss-nested'),
-cssImport = require('postcss-import'),
-cssvars = require('postcss-simple-vars'),
-mixins = require('postcss-mixins'),
 plumber = require('gulp-plumber'),
 notify = require('gulp-notify'),
-gutil = require('gulp-util');
+gutil = require('gulp-util'),
+postcss = require('gulp-postcss'),
+cssImport = require('postcss-import'),
+mixins = require('postcss-mixins'),
+cssvars = require('postcss-simple-vars'),
+nested = require('postcss-nested'),
+autoprefixer = require('autoprefixer');
 
 gulp.task('styles', function(){
   return gulp.src('./app/assets/css/styles.css')

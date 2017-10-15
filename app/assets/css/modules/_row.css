@@ -1,38 +1,36 @@
 .row {
   @mixin clearfix;
-
-  & div{
+  & div {
     position: relative;
   }
-
   &--gutters {
     margin-right: -65px;
   }
-
-  &--gutters > div {
+  &--gutters>div {
     padding-right: 65px;
     margin-bottom: 35px;
     &:last-child {
       margin-bottom: 0;
     }
-      @mixin tablet-portrait-up {
-        margin-bottom: 0;
-      }
+    @mixin tablet-portrait-up {
+      margin-bottom: 0;
+    }
   }
   &__offset--2-xs {
     margin-left: 16.666%;
   }
   @mixin tablet-portrait-up {
-    &__1{
+    &__1 {
       float: left;
       width: 8.33333333%;
+    }
+    &__2 {
+      float: left;
+      width: 16.66%;
     }
     &__3 {
       float: left;
       width: 25%;
-      &-push-9{
-        left: 75%;
-      }
     }
     &__4 {
       float: left;
@@ -45,32 +43,33 @@
     &__9 {
       float: left;
       width: 75%;
-      &-pull-3 {
-        right: 25%;
-      }
     }
     &__12 {
       float: left;
       width: 100%;
     }
-    &__offset--0{
+    &-pull-3 {
+      right: 25%;
+    }
+    &-push-9 {
+      left: 75%;
+    }
+    &__offset--0 {
       margin-left: 0;
     }
-    &__offset--3{
+    &__offset--3 {
       margin-left: 25%;
     }
-    &__offset--4{
+    &__offset--4 {
       margin-left: 33.33333333%;
     }
   }
-
   @mixin tablet-landscape-up {
     &__4--md {
       float: left;
       width: 33.33%;
     }
-
-    &__offset--0--md{
+    &__offset--0--md {
       margin-left: 0;
     }
   }

@@ -23,11 +23,11 @@
     @mixin tablet-portrait-up{
       width: auto;
     }
-    &.fadeInUp--Hero{
+    &.fadeInDown {
       animation-duration: 2s;
       animation-fill-mode: both;
       animation-delay: .8s;
-      animation-name: fadeInUp2;
+      animation-name: fadeInDown--hero;
     }
 
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes fadeInUp2 {
+@keyframes fadeInDown--hero {
   0% {
     opacity: 0;
     transform: translate3d(-50%,-100%,0);

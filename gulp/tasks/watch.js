@@ -8,7 +8,7 @@ gulp.task('watch', function(){
       baseDir:"app"
     }
   });
-  watch('./app/index.html', function(){
+  watch('./app/*.html', function(){
     browserSync.reload();
   });
   watch('./app/assets/css/**/*.css', function(){

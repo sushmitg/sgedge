@@ -1,3 +1,4 @@
+@import "base/_icomoon";
 @import "normalize.css";
 @import "animate.css/animate.min.css";
 @import "base/_global";
@@ -19,3 +20,4 @@
 @import "modules/_footer";
 @import "modules/_external_link";
 @import "modules/_contact-us";
+@import "modules/_products-page";

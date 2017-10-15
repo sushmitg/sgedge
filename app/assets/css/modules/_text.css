@@ -43,3 +43,32 @@
     }
   }
 }
+
+br {
+  &.mobile--visible {
+    display: block;
+  }
+  &.mobile--hidden {
+    display: none;
+  }
+  &.tablet--visible {
+    @mixin tablet-portrait-up {
+      display: block;
+    }
+  }
+  &.tablet--hidden {
+    @mixin tablet-portrait-up {
+      display: none;
+    }
+  }
+  &.laptop--visible {
+    @mixin tablet-landscape-up {
+      display: block;
+    }
+  }
+  &.laptop--hidden {
+    @mixin tablet-landscape-up {
+      display: none;
+    }
+  }
+}

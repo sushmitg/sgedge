@@ -79,7 +79,7 @@ function attach(element, listener, ev, tf) {
 
 function fadeOut(element, startLevel, endLevel, duration, callback) {
   var fOInt;
-  op = startLevel;
+  var op = startLevel;
   fOInt = setInterval(function() {
     if (op <= endLevel) {
       element.style.opacity = endLevel;
@@ -100,7 +100,7 @@ attach(window, 'load', function() {
     loader.style.display = 'none';
   });
   var heroText = document.querySelector('.large-hero__text-content');
-  heroText.classList += ' fadeInUp--Hero';
+  heroText.classList += ' fadeInDown';
 }, false);
 
 // Shrink Logo on scroll
@@ -136,7 +136,7 @@ document.addEventListener('scroll', function() {
       el.style.opacity = '1';
     },
     offset: offset
-  })
+  });
 });
 
 // External Links Cool animation icon
@@ -148,9 +148,9 @@ document.addEventListener('scroll', function() {
 [].forEach.call(document.querySelectorAll('a.btn'), function(el) {
   el.addEventListener("click", function(e) {
     e.preventDefault();
-    var URL = this.href
+    var URL = this.href ;
     setTimeout(function() {
-      window.location.href = URL
+      window.location.href = URL ;
     }, 700);
   });
 });
@@ -172,7 +172,7 @@ function hasClass(element, findclass) {
 
 // Hide Menu when clicked on anchor
 menu.addEventListener("click", function(e) {
-  if (e.target.nodeName = "A" && hasClass(hamburger, "is-active")) {
+  if (e.target.nodeName == "A" && hasClass(hamburger, "is-active")) {
     hamburger.classList.toggle("is-active");
   }
 });
