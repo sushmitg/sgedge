@@ -1,3 +1,38 @@
+/* Style the tab */
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  &__links {
+    &:hover{
+      background-color: #ddd;
+    }
+    &.active {
+      background-color: #ccc;
+      border-color: $mainRed;
+    }
+    float: left;
+    width: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-weight: 700;
+    font-size: 2.815rem;
+    font-family: 'Poppins';
+    background-color: inherit;
+    border-bottom: 5px solid #f1f1f1;
+  }
+  &__content {
+    display: none;
+    padding: 3rem;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+}
+
 .module-title {
   font-size: 2rem;
   font-weight: 700;
@@ -33,7 +68,7 @@
   padding: 0;
   list-style-type: none;
   li {
-    padding: 15px 0 ;
-    border-bottom: 1px solid #ededed ;
+    padding: 15px 0;
+    border-bottom: 1px solid #ededed;
   }
 }

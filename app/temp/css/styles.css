@@ -1758,6 +1758,40 @@ address, .contacts {
   -webkit-transform: translate(-50%, -50%) rotate(-90deg);
           transform: translate(-50%, -50%) rotate(-90deg);
 }
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.tab__links {
+    float: left;
+    width: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    font-weight: 700;
+    font-size: 2.815rem;
+    font-family: 'Poppins';
+    background-color: inherit;
+    border-bottom: 5px solid #f1f1f1;
+  }
+.tab__links:hover{
+      background-color: #ddd;
+    }
+.tab__links.active {
+      background-color: #ccc;
+      border-color: #f42837;
+    }
+.tab__content {
+    display: none;
+    padding: 3rem;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
 .module-title {
   font-size: 2rem;
   font-weight: 700;
@@ -1795,6 +1829,6 @@ address, .contacts {
   list-style-type: none;
 }
 .product-list li {
-    padding: 15px 0 ;
-    border-bottom: 1px solid #ededed ;
+    padding: 15px 0;
+    border-bottom: 1px solid #ededed;
   }

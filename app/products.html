@@ -27,16 +27,16 @@
             <a href="/" class="menu__link">Home</a>
           </li>
           <li class="menu__item">
-            <a href="#about-us" class="menu__link">About</a>
+            <a href="/#about-us" class="menu__link">About</a>
           </li>
           <li class="menu__item">
-            <a href="#services" class="menu__link">Services</a>
+            <a href="/#services" class="menu__link">Services</a>
           </li>
           <li class="menu__item">
-            <a href="#products" class="menu__link">Products</a>
+            <a href="/#products" class="menu__link">Products</a>
           </li>
           <li class="menu__item">
-            <a href="#contact-us" class="menu__link">Contact Us</a>
+            <a href="/#contact-us" class="menu__link">Contact Us</a>
           </li>
         </ul>
       </nav>
@@ -47,7 +47,12 @@
   <div id="products" class="page-section">
     <div class="container">
       <div class="on-scroll-reveal" data-animation="fadeInUp" data-offset="80%">
-        <div class="row row--gutters">
+        <div class="tab">
+          <button id="new" class="tab__links active" data-id="newProducts">Brand New <br>Products</button>
+          <button id="old" class="tab__links" data-id="oldProducts">Second Hand Products</button>
+        </div>
+        <div id="newProducts" class="tab__content animated">
+          <div class="row row--gutters">
           <div class="row__4">
             <aside class="sidebar">
               <h1 class="module-title ">
@@ -66,13 +71,35 @@
             </div>
           </div>
         </div>
+        </div>
+        <div id="oldProducts"class="tab__content animated">
+          <div class="row row--gutters">
+          <div class="row__4">
+            <aside class="sidebar">
+              <h1 class="module-title ">
+                <span>Categories</span>
+              </h1>
+              <ul class="product-list">
+                <li class="icon-chevron-right">aaasadafsfe</li>
+                <li class="icon-chevron-right"></li>
+                <li class="icon-chevron-right"></li>
+              </ul>
+            </aside>
+          </div>
+          <div class="row__8">
+            <div class="">
+
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
       <!--.on-scroll-reveal-->
     </div>
     <!--container-->
   </div>
   <!--products-->
-  <div id="contact-us" class="page-section">
+  <!-- <div id="contact-us" class="page-section">
     <div class="container">
       <div class="row row--gutters">
         <div class="row__3">
@@ -128,7 +155,7 @@
       </div>
     </div>
   </div>
-  </div>
+  </div> -->
   <!--contact-us-->
   <footer class="page-section footer--dark">
     <div class="container">
@@ -154,8 +181,8 @@
             </div>
             <div class="textwidget">
               <ul>
-                <li class="icon-chevron-right"><a href="#" title="Club">Brand New</a></li>
-                <li class="icon-chevron-right"><a href="#" title="Our work">Second hand</a></li>
+                <li class="icon-chevron-right"><a href="products.html#new" title="Club">Brand New</a></li>
+                <li class="icon-chevron-right"><a href="products.html#old" title="Our work">Second hand</a></li>
               </ul>
             </div>
           </div>
