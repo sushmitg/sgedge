@@ -164,21 +164,26 @@ if (document.querySelector('#newProducts')) {
 });
 
 var hash = window.location.hash ;
-if(hash) {
-  document.querySelector(hash.toString()).click();
+
+function clickTab(hash) {
+  window.scrollBy(0, -100);
+  document.querySelector(hash).click();
+}
+
+if(hash){
+  clickTab(hash);
 }
 
 [].forEach.call(document.querySelectorAll("a[href^='products.html']"), function(el){
   el.addEventListener("click", function(e) {
     e.preventDefault();
-    var URL = this.href;
-    if(window.location.href == URL){
-      var hash = window.location.hash ;
-      console.log(hash);
-      console.log(window.location.href == URL);
-      document.querySelector(hash.toString()).click();
+    var clickedAnchorURL = this.href.split('#')[0], currentPageURL = window.location.href.split('#')[0];
+    if(currentPageURL == clickedAnchorURL){
+      window.location.href = this.href;
+      clickTab(this.hash);
     } else {
-      window.location.href = URL;
+      window.location.href = this.href;
+      clickTab(this.hash);
     }
   });
 });

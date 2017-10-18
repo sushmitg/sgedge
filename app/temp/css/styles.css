@@ -726,9 +726,17 @@ h5.rotated{
     -webkit-animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
             animation: 2500ms ease-in-out 0s normal both 1 running bounceInUp;
   }
-.fadeInUp, .fadeInRight{
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
+.fadeInUp, .fadeInRight {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+.bounceInUp:nth-child(2) {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+.bounceInUp:nth-child(3) {
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
 }
 .heading {
   display: inline-block;

@@ -1,3 +1,9 @@
-.fadeInUp, .fadeInRight{
-    animation-duration: 2s;
+.fadeInUp, .fadeInRight {
+  animation-duration: 2s;
+}
+.bounceInUp:nth-child(2) {
+  animation-delay: .3s;
+}
+.bounceInUp:nth-child(3) {
+  animation-delay: .6s;
 }
