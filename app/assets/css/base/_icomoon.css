@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'icomoon';
   src: url('../fonts/icomoon.eot?sxqqfp');
@@ -6,7 +7,7 @@
   font-style: normal;
 }
 
-[class^="icon-"]::before, [class*=" icon-"]::before {
+[class^="icon-"]::before, [class*=" icon-"]::before, .module-title span::after {
   /* use !important to prevent issues with browser extensions that change fonts */
   speak: none;
   display: inline-block;
@@ -35,4 +36,10 @@
 }
 .icon-file-pdf-o:before {
   content: "\f1c1";
+}
+.icon-chevron-down:after {
+  content: "\f078";
+}
+.icon-chevron-up:after {
+  content: "\f077";
 }

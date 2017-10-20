@@ -48,27 +48,33 @@
     <div class="container">
       <div class="on-scroll-reveal" data-animation="fadeInUp" data-offset="this.offsetTop">
         <div class="tab">
-          <button id="new" class="tab__links active" data-id="newProducts">Brand New <br>Products</button>
-          <button id="old" class="tab__links" data-id="oldProducts">Second Hand Products</button>
+          <button id="new" class="tab__links active" data-id="#newProducts">Brand New <br>Products</button>
+          <button id="old" class="tab__links" data-id="#oldProducts">Second Hand Products</button>
         </div>
         <div id="newProducts" class="tab__content animated">
           <div class="row row--gutters">
           <div class="row__4">
             <aside class="sidebar">
               <h1 class="module-title ">
-                <span>Categories</span>
+                <span class="icon-chevron-down">Categories</span>
               </h1>
-              <ul class="product-list">
-                <li class="icon-chevron-right">aaasadafsfe</li>
-                <li class="icon-chevron-right"></li>
-                <li class="icon-chevron-right"></li>
+              <ul class="category">
+                <li class="icon-chevron-right category--list active" data-id="#narrow-web-new">Narrow Web Label Printing</li>
+                <li class="icon-chevron-right category--list" data-id="#die-cutting-new">Die Cutting &amp; Slitting Machine</li>
+                <li class="icon-chevron-right category--list" data-id="#special-effect-new">Special Effect Printing Coating  Machine</li>
+                <li class="icon-chevron-right category--list" data-id="#consumable-new">Consumable Products</li>
+                <li class="icon-chevron-right category--list" data-id="#accessories-new">Accessories</li>
               </ul>
             </aside>
           </div>
           <div class="row__8">
-            <div class="">
+            <div id="narrow-web-new" class="tab__content-v animated" >
 
             </div>
+            <div id="die-cutting-new" class="tab__content-v animated" > </div>
+            <div id="special-effect-new" class="tab__content-v animated" > </div>
+            <div id="consumable-new" class="tab__content-v animated" > </div>
+            <div id="accessories-new" class="tab__content-v animated" > </div>
           </div>
         </div>
         </div>
@@ -77,19 +83,23 @@
           <div class="row__4">
             <aside class="sidebar">
               <h1 class="module-title ">
-                <span>Categories</span>
+                <span class="icon-chevron-down">Categories</span>
               </h1>
-              <ul class="product-list">
-                <li class="icon-chevron-right">aaasadafsfe</li>
-                <li class="icon-chevron-right"></li>
-                <li class="icon-chevron-right"></li>
+              <ul class="category">
+                <li class="icon-chevron-right category--list active" data-id="#narrow-web-old">Narrow Web Label Printing</li>
+                <li class="icon-chevron-right category--list" data-id="#die-cutting-old">Die Cutting &amp; Slitting Machine</li>
+                <li class="icon-chevron-right category--list" data-id="#special-effect-old">Special Effect Printing Coating Machine</li>
+                <li class="icon-chevron-right category--list" data-id="#consumable-old">Consumable Products</li>
+                <li class="icon-chevron-right category--list" data-id="#accessories-old">Accessories</li>
               </ul>
             </aside>
           </div>
           <div class="row__8">
-            <div class="">
-
-            </div>
+            <div id="narrow-web-old" class="tab__content-v animated"> </div>
+            <div id="die-cutting-old" class="tab__content-v animated"> </div>
+            <div id="special-effect-old" class="tab__content-v animated"> </div>
+            <div id="consumable-old" class="tab__content-v animated"> </div>
+            <div id="accessories-old" class="tab__content-v animated"> </div>
           </div>
         </div>
         </div>
@@ -200,7 +210,7 @@
             </div>
           </div>
         </div>
-        <div class="row__4">
+        <div class="row__12 row__4--md">
           <div class="footer-hours">
             <div><span>OFFICE TIMINGS :</span></div>
             <span>Monday to Friday</span>

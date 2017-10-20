@@ -157,28 +157,29 @@ if (document.querySelector('#newProducts')) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(this.dataset.id).classList += " fadeIn";
-    document.getElementById(this.dataset.id).style.display = "block";
+    document.querySelector(this.dataset.id).classList += " fadeIn";
+    document.querySelector(this.dataset.id).style.display = "block";
     e.currentTarget.className += " active";
   });
 });
 
-var hash = window.location.hash ;
+var hash = window.location.hash;
 
 function clickTab(hash) {
   window.scrollBy(0, -100);
   document.querySelector(hash).click();
 }
 
-if(hash){
+if (hash) {
   clickTab(hash);
 }
 
-[].forEach.call(document.querySelectorAll("a[href^='products.html']"), function(el){
+[].forEach.call(document.querySelectorAll("a[href^='products.html']"), function(el) {
   el.addEventListener("click", function(e) {
     e.preventDefault();
-    var clickedAnchorURL = this.href.split('#')[0], currentPageURL = window.location.href.split('#')[0];
-    if(currentPageURL == clickedAnchorURL){
+    var clickedAnchorURL = this.href.split('#')[0],
+      currentPageURL = window.location.href.split('#')[0];
+    if (currentPageURL == clickedAnchorURL) {
       window.location.href = this.href;
       clickTab(this.hash);
     } else {
@@ -187,3 +188,102 @@ if(hash){
     }
   });
 });
+// get siblings of any element...
+function getSiblings(elem) {
+  var siblings = [];
+  var sibling = elem.parentNode.firstChild;
+  for (; sibling; sibling = sibling.nextSibling) {
+    if (sibling.nodeType !== 1 || sibling === elem) continue;
+    siblings.push(sibling);
+  }
+  return siblings;
+};
+
+// product category verticle tab....
+[].forEach.call(document.querySelectorAll('.category--list'), function(el) {
+  el.addEventListener("click", function(e) {
+    var i, vtabcontent, verticaltabs;
+    // Get all elements with class="tabcontent" and hide them
+    var parentElemRow = getClosest(this, '.row');
+    vtabcontent = parentElemRow.querySelectorAll(".tab__content-v");
+    for (i = 0; i < vtabcontent.length; i++) {
+      vtabcontent[i].style.display = "none";
+      vtabcontent[i].className = vtabcontent[i].className.replace(" fadeIn", "");
+    }
+    if (mq.matches && window.location.href.split('#')[0].indexOf('products.html') >= 0) {
+      var panel = this.parentNode;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.style.margin = '0';
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.margin = '1em 0';
+      }
+      var chevron = parentElemRow.querySelector('.module-title span');
+      chevron.classList.toggle("icon-chevron-up");
+    }
+    // Get all siblings with class="category--list" and remove the class "active"
+    var siblings = getSiblings(e.currentTarget);
+    for (i = 0; i < siblings.length; i++) {
+      siblings[i].className = siblings[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.querySelector(this.dataset.id).classList += " fadeIn";
+    document.querySelector(this.dataset.id).style.display = "block";
+    e.currentTarget.className += " active";
+  });
+});
+
+var mq = window.matchMedia("(max-width: 500px)");
+
+if (mq.matches && window.location.href.split('#')[0].indexOf('products.html') >= 0) {
+  [].forEach.call(document.querySelectorAll('.module-title'), function(el) {
+    el.addEventListener("click", function() {
+      var chevron = this.querySelector('.module-title span');
+      chevron.classList.toggle("icon-chevron-up");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.style.margin = '0';
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.margin = '1em 0';
+      }
+    });
+  });
+}
+
+/**
+ * Get the closest matching element up the DOM tree.
+ * @private
+ * @param  {Element} elem     Starting element
+ * @param  {String}  selector Selector to match against
+ * @return {Boolean|Element}  Returns null if not match found
+ */
+
+var getClosest = function(elem, selector) {
+
+  // Element.matches() polyfill
+  if (!Element.prototype.matches) {
+    Element.prototype.matches =
+      Element.prototype.matchesSelector ||
+      Element.prototype.mozMatchesSelector ||
+      Element.prototype.msMatchesSelector ||
+      Element.prototype.oMatchesSelector ||
+      Element.prototype.webkitMatchesSelector ||
+      function(s) {
+        var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+          i = matches.length;
+        while (--i >= 0 && matches.item(i) !== this) {}
+        return i > -1;
+      };
+  }
+
+  // Get closest match
+  for (; elem && elem !== document; elem = elem.parentNode) {
+    if (elem.matches(selector)) return elem;
+  }
+
+  return null;
+
+};

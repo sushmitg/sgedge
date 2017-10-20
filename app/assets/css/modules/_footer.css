@@ -9,16 +9,22 @@ footer {
     padding-bottom: 0;
     background-color: #292825;
   }
-  & .row__3 {
-    margin-bottom: 0;
+  & [class^=row__] {
+    margin-bottom: 10px;
+    @mixin tablet-portrait-up {
+      margin-bottom: 35px;
+    }
   }
 }
 
 .bottom-footer {
+  margin-top: 16px;
   color: #fff;
-  margin-top: 30px;
   text-align: center;
   background-color: #161616;
+  @mixin tablet-portrait-up {
+    margin-top: 30px;
+  }
 }
 
 .widget {
