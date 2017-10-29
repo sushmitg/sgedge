@@ -13,13 +13,13 @@
 .introduction--text {
   margin: 0;
   margin-bottom: 50px;
-  &--justify{
+  &--justify {
     margin: 0;
     text-align: justify;
   }
 
   @mixin tablet-landscape-up {
-    &--underline{
+    &--underline {
       line-height: 2.3;
       font-size: 1.25rem;
       border-bottom: 1px solid #ddd;

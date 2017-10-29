@@ -29,13 +29,13 @@ var loader = document.querySelector('.loader');
 var heroText = document.querySelector('.large-hero__text-content');
 if (heroText) {
   heroText.style.opacity = '0';
-};
+}
 attach(window, 'load', function() {
   fadeOut(loader, 1, 0, 50, function(cb) {
     loader.style.display = 'none';
     if (heroText) {
       heroText.classList += ' fadeInDown';
-    };
+    }
   });
 }, false);
 
@@ -197,7 +197,7 @@ function getSiblings(elem) {
     siblings.push(sibling);
   }
   return siblings;
-};
+}
 
 // product category verticle tab....
 [].forEach.call(document.querySelectorAll('.category--list'), function(el) {
@@ -223,9 +223,9 @@ function getSiblings(elem) {
       chevron.classList.toggle("icon-chevron-up");
     }
     // Get all siblings with class="category--list" and remove the class "active"
-    var siblings = getSiblings(e.currentTarget);
-    for (i = 0; i < siblings.length; i++) {
-      siblings[i].className = siblings[i].className.replace(" active", "");
+    verticaltabs = getSiblings(e.currentTarget);
+    for (i = 0; i < verticaltabs.length; i++) {
+      verticaltabs[i].className = verticaltabs[i].className.replace(" active", "");
     }
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.querySelector(this.dataset.id).classList += " fadeIn";

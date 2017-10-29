@@ -19,11 +19,14 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    font-size: 1rem;
     font-weight: 700;
-    font-size: 1.815rem;
     font-family: 'Poppins';
     background-color: inherit;
     border-bottom: 5px solid #f1f1f1;
+    @mixin tablet-portrait-up {
+      font-size: 1.815rem;
+    }
     @mixin tablet-landscape-up {
       font-size: 2.815rem;
     }
@@ -40,34 +43,35 @@
       padding: 3rem;
     }
     &-v {
-      &:first-child {
-        display: block;
+      &:not(:first-child) {
+        display: none;
       }
-      display: none;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      ;
+      @mixin tablet-portrait-up {
+        border: 1px solid #ccc;
+        padding: 0 1rem;
+      }
     }
   }
 }
 
 .module-title {
-  font-size: 2rem;
+  font-size: 1.5em;
   font-weight: 700;
   font-family: 'Poppins';
   position: relative;
   text-transform: capitalize;
   margin: 0;
-  padding: 5px;
+  padding: 10px;
   letter-spacing: 0;
   background: #f1f1f1;
   @mixin tablet-portrait-up {
+    font-size: 2em;
     padding: 0;
     margin: 0 0 50px 0;
     background: none;
   }
   @mixin tablet-landscape-up {
-    font-size: 2.815rem;
+    font-size: 2.815em;
   }
   &:before {
     content: none;
@@ -95,7 +99,7 @@
   }
   span:after {
     float: right;
-    line-height: 40px;
+    line-height: 25px;
     font-size: 16px;
     @mixin tablet-portrait-up {
       content: none;
@@ -127,7 +131,7 @@
     padding: 15px 0;
     margin-bottom: 10px;
     padding-left: 19px;
-    text-indent: -0.6em;
+    text-indent: -0.52em;
     border-bottom: 1px solid #ededed;
   }
 }

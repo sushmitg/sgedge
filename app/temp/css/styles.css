@@ -798,9 +798,14 @@ h5.rotated{
 }
   }
 .page-section {
-  padding: 4.5rem 0;
+  padding: 2.25rem 0;
   background-color: #fff;
 }
+@media (min-width: 600px) {
+.page-section {
+    padding: 4.5rem 0
+}
+  }
 .page-section--dark {
     background-color: #161616;
   }
@@ -1400,12 +1405,12 @@ header:after {
   margin: 0;
   margin-bottom: 50px;
 }
-.introduction--text--justify{
+.introduction--text--justify {
     margin: 0;
     text-align: justify;
   }
 @media (min-width: 900px) {
-    .introduction--text--underline{
+    .introduction--text--underline {
       line-height: 2.3;
       font-size: 1.25rem;
       border-bottom: 1px solid #ddd;
@@ -1801,8 +1806,8 @@ address, .contacts {
     padding: 14px 16px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    font-size: 1rem;
     font-weight: 700;
-    font-size: 1.815rem;
     font-family: 'Poppins';
     background-color: inherit;
     border-bottom: 5px solid #f1f1f1;
@@ -1814,6 +1819,11 @@ address, .contacts {
       background-color: #ccc;
       border-color: #f42837;
     }
+@media (min-width: 600px) {
+.tab__links {
+      font-size: 1.815rem
+  }
+  }
 @media (min-width: 900px) {
 .tab__links {
       font-size: 2.815rem
@@ -1835,28 +1845,29 @@ address, .contacts {
       padding: 3rem
   }
   }
-.tab__content-v {
-      display: none;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      ;
-    }
-.tab__content-v:first-child {
-        display: block;
+.tab__content-v:not(:first-child) {
+        display: none;
       }
+@media (min-width: 600px) {
+.tab__content-v {
+        border: 1px solid #ccc;
+        padding: 0 1rem
+    }
+  }
 .module-title {
-  font-size: 2rem;
+  font-size: 1.5em;
   font-weight: 700;
   font-family: 'Poppins';
   position: relative;
   text-transform: capitalize;
   margin: 0;
-  padding: 5px;
+  padding: 10px;
   letter-spacing: 0;
   background: #f1f1f1;
 }
 @media (min-width: 600px) {
 .module-title {
+    font-size: 2em;
     padding: 0;
     margin: 0 0 50px 0;
     background: none
@@ -1864,7 +1875,7 @@ address, .contacts {
   }
 @media (min-width: 900px) {
 .module-title {
-    font-size: 2.815rem
+    font-size: 2.815em
 }
   }
 .module-title:before {
@@ -1897,7 +1908,7 @@ address, .contacts {
   }
 .module-title span:after {
     float: right;
-    line-height: 40px;
+    line-height: 25px;
     font-size: 16px;
   }
 @media (min-width: 600px) {
@@ -1927,7 +1938,7 @@ address, .contacts {
     padding: 15px 0;
     margin-bottom: 10px;
     padding-left: 19px;
-    text-indent: -0.6em;
+    text-indent: -0.52em;
     border-bottom: 1px solid #ededed;
   }
 .category--list:hover {
@@ -1937,3 +1948,20 @@ address, .contacts {
       border-color: #f42837;
       background-color: #f1f1f1;
     }
+.product:not(:last-child){
+    border-bottom: 1px solid #f42837;
+    margin-bottom: 2em;
+  }
+.product h2 {
+    font-size: 1em;
+    padding-left: 10px;
+    border-left: 5px solid #f42837;
+  }
+@media (min-width: 600px) {
+.product h2 {
+      font-size: 1.5em;
+  }
+  }
+.product :not(:first-child) {
+    margin-bottom: 2em;
+  }
