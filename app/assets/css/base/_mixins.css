@@ -1,3 +1,8 @@
+@define-mixin small-mobile {
+  @media (max-height: 600px)  {
+    @mixin-content ;
+  }
+}
 @define-mixin tablet-portrait-up {
   @media (min-width: 600px) {
     @mixin-content ;

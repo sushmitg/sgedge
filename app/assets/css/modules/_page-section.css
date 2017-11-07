@@ -9,9 +9,13 @@
     background-color: $darkGrey;
   }
   &.why-us {
-    background-image: url(../../assets/images/printing.jpg);
+    &.lazyloaded{
+      background-image: url(../../assets/images/printing.jpg);
+    }
   }
   &.partners {
-    background-image: url(../../assets/images/partners.jpg);
+    &.lazyloaded{
+      background-image: url(../../assets/images/partners.jpg);
+    }
   }
 }

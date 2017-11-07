@@ -10,7 +10,8 @@ footer {
     background-color: #292825;
   }
   & [class^=row__] {
-    margin-bottom: 10px;
+    margin-bottom: 0.8em;
+    float: left;
     @mixin tablet-portrait-up {
       margin-bottom: 35px;
     }

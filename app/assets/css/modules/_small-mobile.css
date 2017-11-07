@@ -1,0 +1,27 @@
+@mixin small-mobile {
+  .widget-title{
+    margin: 10px 0;
+  }
+  .footer-hours {
+    @mixin clearfix;
+    padding: 10px;
+    div, span {
+      line-height: 1.5;
+      font-size: 14px;
+      float: left;
+      width: 50%;
+    }
+    div:nth-child(2n+3):not(:last-child){
+      text-align: right;
+    }
+    div:first-child, div:last-child {
+      width: 100%;
+    }
+    div:last-child {
+      text-align: center;
+    }
+  }
+  .bottom-footer {
+    margin-top: 0.5em;
+  }
+}

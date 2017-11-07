@@ -6,6 +6,9 @@
   background-image: url(https://www.transparenttextures.com/patterns/skulls.png);
 
   @mixin tablet-landscape-up {
+    height: 50vh;
+  }
+  @mixin desktop-up {
     height: 65vh;
   }
 
@@ -20,7 +23,7 @@
     transform: translate(-50%,-50%);
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 
-    @mixin tablet-portrait-up{
+    @mixin tablet-landscape-up{
       width: auto;
     }
     &.fadeInDown {
