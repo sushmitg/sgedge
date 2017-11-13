@@ -26,5 +26,11 @@
 
   & .paragraph {
     margin-bottom: 40px;
+    p {
+      margin: 0;
+      @mixin tablet-portrait-up {
+        margin: .7em;
+      }
+    }
   }
 }

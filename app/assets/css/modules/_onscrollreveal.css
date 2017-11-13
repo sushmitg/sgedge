@@ -1,4 +1,4 @@
-.fadeInUp, .fadeInRight {
+.fadeIn, .fadeInUp, .fadeInRight {
   animation-duration: 2s;
 }
 .bounceInUp:nth-child(2) {

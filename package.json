@@ -41,6 +41,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "lazysizes": "^4.0.1",
+    "masonry-layout": "^4.2.0",
     "normalize.css": "^7.0.0",
     "waypoints": "^4.0.1"
   }

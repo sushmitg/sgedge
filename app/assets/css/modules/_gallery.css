@@ -1,0 +1,44 @@
+.gallery {
+  margin: 10px 0;
+}
+
+.grid {
+  &-item {
+    width: calc(33.33% - 2%);
+    margin: 1%;
+    border: 1px solid #ccc;
+    background: #ff6666;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: transform .3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.item {
+  opacity: 0
+}
+
+.item.is-visible {
+  animation: Items 600ms ease-in forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes Items {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotateY(90deg)
+  }
+  60% {
+    transform: scale(1.4)
+  }
+  90% {
+    transform: scale(0.9)
+  }
+  100% {
+    opacity: 1
+  }
+}

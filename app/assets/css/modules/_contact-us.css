@@ -1,5 +1,8 @@
 #contact-us {
-  & h1 {
+  .row:first-child {
+    margin-bottom: 35px;
+  }
+  h1 {
     @mixin tablet-landscape-up {
       margin-top: 0;
     }
@@ -46,6 +49,7 @@ address, .contacts {
     margin-right: 0.5em;
   }
 }
+
 .call:before {
   content: "Call / E-mail";
   top: 53%;

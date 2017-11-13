@@ -1,7 +1,7 @@
 .heading {
   display: inline-block;
   padding-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
   font-family: 'Poppins';
   border-top: 5px solid $mainRed;

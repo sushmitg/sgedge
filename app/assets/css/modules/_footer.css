@@ -10,10 +10,18 @@ footer {
     background-color: #292825;
   }
   & [class^=row__] {
-    margin-bottom: 0.8em;
     float: left;
+    margin-bottom: 0.8em;
+    margin-right: 29px;
+    &:last-child {
+      margin: 0;
+    }
     @mixin tablet-portrait-up {
       margin-bottom: 35px;
+      margin-right: 35px;
+    }
+    @mixin tablet-landscape-up {
+      margin-right: 0;
     }
   }
 }
@@ -84,7 +92,7 @@ footer {
 .footer-hours {
   background: #1b1b20;
   border: 1px dashed #da3038;
-  padding: 20px 35px;
+  padding: 20px 30px;
 }
 
 .footer-hours div {

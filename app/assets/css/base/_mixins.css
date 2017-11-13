@@ -3,6 +3,11 @@
     @mixin-content ;
   }
 }
+@define-mixin mobile-landscape {
+  @media (max-height: 500px)  {
+    @mixin-content ;
+  }
+}
 @define-mixin tablet-portrait-up {
   @media (min-width: 600px) {
     @mixin-content ;

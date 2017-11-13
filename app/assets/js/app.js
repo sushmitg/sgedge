@@ -1,5 +1,7 @@
 require('lazysizes');
+var Masonry = require('masonry-layout');
 require('../../../node_modules/waypoints/lib/noframework.waypoints.min');
+
 function attach(element, listener, ev, tf) {
   if (element.attachEvent) { //if it's <= IE8
     element.attachEvent("on" + listener, ev);
@@ -77,6 +79,28 @@ if (is_root) {
     handler: function() {
       this.element.classList.add(animationClass);
       el.style.opacity = '1';
+    },
+    offset: offset
+  });
+});
+
+// gallery masonry
+var msnry = new Masonry('.grid', {
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-item',
+  percentPosition: true
+});
+
+var item = document.querySelectorAll('.item');
+
+[].forEach.call(item, function(el, i) {
+  var offset = el.dataset.offset;
+  var waypoint = new Waypoint({
+    element: el,
+    handler: function() {
+      setTimeout(function() {
+        el.className += ' is-visible';
+      }, 500 * i);
     },
     offset: offset
   });
@@ -247,7 +271,7 @@ if (mq.matches && window.location.href.split('#')[0].indexOf('products.html') >=
         panel.style.margin = '0';
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        panel.style.margin = '1em 0';
+        panel.style.margin = '1em 0 0 0';
       }
     });
   });

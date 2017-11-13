@@ -1,80 +1,82 @@
 .row {
   @mixin clearfix;
-  & div {
+  &>div {
     position: relative;
-  }
-  &--gutters {
-    margin-right: -65px;
-  }
-  &--gutters>div {
-    padding-right: 65px;
     margin-bottom: 35px;
+    #contact-us & {
+      padding-right: 65px;
+    }
     &:last-child {
       margin-bottom: 0;
+      padding: 0;
     }
     @mixin tablet-portrait-up {
       margin-bottom: 0;
     }
   }
-  &__offset--2-xs {
-    margin-left: 16.666%;
+
+&__offset--2-xs {
+  margin-left: 16.666%;
+}
+
+@mixin tablet-portrait-up {
+  &__1 {
+    float: left;
+    width: 8.33333333%;
   }
-  @mixin tablet-portrait-up {
-    &__1 {
-      float: left;
-      width: 8.33333333%;
-    }
-    &__2 {
-      float: left;
-      width: 16.66%;
-    }
-    &__3 {
-      float: left;
-      width: 25%;
-    }
-    &__4 {
-      float: left;
-      width: 33.33%;
-    }
-    &__6 {
-      float: left;
-      width: 50%;
-    }
-    &__8 {
-      float: left;
-      width: 66.66%;
-    }
-    &__9 {
-      float: left;
-      width: 75%;
-    }
-    &__12 {
-      float: left;
-      width: 100%;
-    }
-    &-pull-3 {
-      right: 25%;
-    }
-    &-push-9 {
-      left: 75%;
-    }
-    &__offset--0 {
-      margin-left: 0;
-    }
-    &__offset--3 {
-      margin-left: 25%;
-    }
-    &__offset--4 {
-      margin-left: 33.33333333%;
-    }
+  &__2 {
+    float: left;
+    width: 16.66%;
   }
-  @mixin tablet-landscape-up {
-    &__4--md {
-      float: left;
-      width: 33.33%;
-    }
-    &__offset--0--md {
-      margin-left: 0;
-    }
+  &__3 {
+    float: left;
+    width: 25%;
   }
+  &__4 {
+    float: left;
+    width: 33.33%;
+  }
+  &__6 {
+    float: left;
+    width: 50%;
+  }
+  &__8 {
+    float: left;
+    width: 66.66%;
+  }
+  &__9 {
+    float: left;
+    width: 75%;
+  }
+  &__12 {
+    float: left;
+    width: 100%;
+  }
+  &-pull-3 {
+    right: 25%;
+  }
+  &-push-9 {
+    left: 75%;
+  }
+  &__offset--0 {
+    margin-left: 0;
+  }
+  &__offset--3 {
+    margin-left: 25%;
+  }
+  &__offset--4 {
+    margin-left: 33.33333333%;
+  }
+}
+
+@mixin tablet-landscape-up {
+  &__4--md {
+    float: left;
+    width: 33.33%;
+  }
+  &__offset--0--md {
+    margin-left: 0;
+  }
+}
+
 }

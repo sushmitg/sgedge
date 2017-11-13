@@ -8,9 +8,15 @@
   &--dark {
     background-color: $darkGrey;
   }
+
   &.why-us {
     &.lazyloaded{
       background-image: url(../../assets/images/printing.jpg);
+    }
+  }
+  &.services {
+    .paragraph {
+      left-padding : 20px;
     }
   }
   &.partners {

@@ -4,7 +4,6 @@
   text-align: justify;
   line-height: 1.5;
   font-size: 1rem;
-
   @mixin tablet-portrait-up {
     font-size: 1.125rem;
   }
@@ -12,12 +11,11 @@
 
 .introduction--text {
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   &--justify {
     margin: 0;
     text-align: justify;
   }
-
   @mixin tablet-landscape-up {
     &--underline {
       line-height: 2.3;
@@ -36,8 +34,20 @@
   &--white {
     color: #fff;
   }
+  &--shadow {
+    text-shadow: 1px 1px 1px #000;
+  }
   &--center {
     text-align: center;
+  }
+  &--left {
+    text-align: left;
+    .paragraph& {
+      text-shadow: 1px 1px 1px #000;
+    }
+  }
+  &--right {
+    text-align: right;
     .paragraph& {
       text-shadow: 1px 1px 1px #000;
     }
