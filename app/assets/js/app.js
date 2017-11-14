@@ -1,4 +1,5 @@
 require('lazysizes');
+var imagesLoaded = require('imagesloaded');
 var Masonry = require('masonry-layout');
 require('../../../node_modules/waypoints/lib/noframework.waypoints.min');
 
@@ -84,16 +85,34 @@ if (is_root) {
   });
 });
 
-// gallery masonry
+var grid = document.querySelector('.grid');
+var gridItem = document.querySelectorAll('.grid-item');
+
 var msnry = new Masonry('.grid', {
   itemSelector: '.grid-item',
   columnWidth: '.grid-item',
   percentPosition: true
 });
 
-var item = document.querySelectorAll('.item');
+// [].forEach.call(gridItem, function(el, i) {
+//   // var img = gridItem.querySelector('img');
+//   new imagesLoaded( gridItem, function() {
+//     // layout Masonry after each image loads
+//     msnry.layout();
+//   });
+//   // var isStill = hasClass(img, 'lazyloaded');
+//     // console.log(isStill);
+// });
 
-[].forEach.call(item, function(el, i) {
+//
+// // gallery masonry
+// var msnry = new Masonry('.grid', {
+//   itemSelector: '.grid-item',
+//   columnWidth: '.grid-item',
+//   percentPosition: true
+// });
+
+[].forEach.call(gridItem, function(el, i) {
   var offset = el.dataset.offset;
   var waypoint = new Waypoint({
     element: el,
