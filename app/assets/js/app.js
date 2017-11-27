@@ -1,7 +1,7 @@
 require('lazysizes');
+require('../../../node_modules/waypoints/lib/noframework.waypoints.min');
 var imagesLoaded = require('imagesloaded');
 var Masonry = require('masonry-layout');
-require('../../../node_modules/waypoints/lib/noframework.waypoints.min');
 
 function attach(element, listener, ev, tf) {
   if (element.attachEvent) { //if it's <= IE8
