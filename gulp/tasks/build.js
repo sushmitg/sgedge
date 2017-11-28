@@ -5,8 +5,8 @@ usemin = require('gulp-usemin'),
 rev = require('gulp-rev'),
 cssnano = require('gulp-cssnano'),
 uglify = require('gulp-uglify'),
-browserSync = require('browser-sync').create();
-;
+browserSync = require('browser-sync').create(),
+gcmq = require('gulp-group-css-media-queries');
 
 gulp.task('previewDocs', function (){
   browserSync.init({
@@ -47,7 +47,7 @@ gulp.task('optimizeImages', ['deleteDistFolder'], function () {
 gulp.task('usemin', ['deleteDistFolder', 'styles', 'scripts'], function(){
   return gulp.src('./app/*.html')
     .pipe(usemin({
-      css: [function(){return rev()}, function(){return cssnano()}],
+      css: [function(){return rev()}, function(){return gcmq()}, function(){return cssnano()}],
       js: [function(){return rev()}, function(){return uglify()}]
     }))
     .pipe(gulp.dest('./docs'));

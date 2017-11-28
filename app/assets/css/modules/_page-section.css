@@ -1,9 +1,6 @@
 .page-section {
-  padding: 2.25rem 0;
+  padding: 4.5rem 0;
   background-color: #fff;
-  @mixin tablet-portrait-up {
-    padding: 4.5rem 0;
-  }
 
   &--dark {
     background-color: $darkGrey;

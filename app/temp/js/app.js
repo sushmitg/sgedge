@@ -495,12 +495,17 @@ if (is_root) {
 var grid = document.querySelector('.grid');
 var gridItem = document.querySelectorAll('.grid-item');
 
-var msnry = new Masonry('.grid', {
+var msnry = new Masonry(grid, {
   itemSelector: '.grid-item',
   columnWidth: '.grid-item',
   percentPosition: true
 });
-
+if (is_root) {
+  imagesLoaded( grid ).on( 'progress', function() {
+    // layout Masonry after each image loads
+    msnry.layout();
+  });
+}
 // [].forEach.call(gridItem, function(el, i) {
 //   // var img = gridItem.querySelector('img');
 //   new imagesLoaded( gridItem, function() {
@@ -527,6 +532,7 @@ var msnry = new Masonry('.grid', {
       setTimeout(function() {
         el.className += ' is-visible';
       }, 500 * i);
+      this.destroy();
     },
     offset: offset
   });

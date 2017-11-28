@@ -798,14 +798,9 @@ h5.rotated{
 }
   }
 .page-section {
-  padding: 2.25rem 0;
+  padding: 4.5rem 0;
   background-color: #fff;
 }
-@media (min-width: 600px) {
-.page-section {
-    padding: 4.5rem 0
-}
-  }
 .page-section--dark {
     background-color: #161616;
   }
@@ -843,14 +838,20 @@ h5.rotated{
       background: rgba(237, 28, 36, 0.6);
     }
 .parallax .paragraph {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 .parallax .paragraph p {
-      margin: 0;
+      font-size: 1rem;
+      margin: .7em 0;
     }
 @media (min-width: 600px) {
 .parallax .paragraph p {
-        margin: .7em
+        margin: 1em 0
+    }
+  }
+@media (min-width: 900px) {
+.parallax .paragraph p {
+        font-size: 1.125rem
     }
   }
 header {
@@ -1124,7 +1125,7 @@ header:after {
   background-color: #fff;
   background-image: url(https://www.transparenttextures.com/patterns/skulls.png);
 }
-@media (max-height: 600px)  {
+@media (max-height: 600px) and (orientation: portrait) {
 .large-hero{
     height: 80vw
 }
@@ -1144,7 +1145,7 @@ header:after {
     height: 30vw
 }
   }
-@media (max-height: 500px)  {
+@media (max-width: 599px) and (orientation: landscape) {
 .large-hero{
     height: 35vw
 }
@@ -1243,52 +1244,62 @@ header:after {
 }
 #products .heading--center {
     text-shadow: none;
+    padding: 0;
   }
 .gallery {
-  margin: 10px 0;
+  margin-bottom: 35px;
 }
-.grid-item {
-    width: calc(33.33% - 2%);
-    margin: 1%;
-    border: 1px solid #ccc;
-    background: #ff6666;
-    border-radius: 5px;
+.gallery .grid-item {
+    opacity: 0;
+    margin: 2.5%;
+    width: 95%;
     overflow: hidden;
-    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    background: #ff6666;
     -webkit-transition: all .3s;
     transition: all .3s;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
-.grid-item:hover {
+@media (min-width: 600px) {
+.gallery .grid-item {
+      margin: 1%;
+      width: calc(33.33% - 2%)
+  }
+  }
+.gallery .grid-item:hover {
       -webkit-transform: scale(1.1);
               transform: scale(1.1);
     }
-.grid-item:hover .item__name {
+.gallery .grid-item:hover .item__name {
         -webkit-transform: translateY(0);
                 transform: translateY(0);
       }
-.item {
-  opacity: 0;
-}
-.item__name {
-    position: absolute;
-    bottom: 0;
-    background: rgba(237,28,36, 0.7);
-    color: #fff;
-    width: 100%;
-    padding: 20px;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
+.gallery .grid-item.is-visible {
+      -webkit-animation: Items 600ms ease-in forwards;
+              animation: Items 600ms ease-in forwards;
+      -webkit-animation-delay: 1.5s;
+              animation-delay: 1.5s;
+    }
+@media (min-width: 600px) {
+.gallery .grid-item:nth-child(2) .item__name {
+        padding: 15px 0
+    }
   }
-.item.is-visible {
-  -webkit-animation: Items 600ms ease-in forwards;
-          animation: Items 600ms ease-in forwards;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+.item__name {
+  position: absolute;
+  bottom: 0;
+  background: rgba(237,28,36, 0.7);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 @-webkit-keyframes Items {
   0% {
@@ -1337,6 +1348,9 @@ header:after {
 /* IE6 */
 .row *:first-child+html .clearfix { zoom: 1; }
 /* IE7 */
+#contact-us .row {
+    margin-right: -65px;
+  }
 .row>div {
     position: relative;
     margin-bottom: 35px;
@@ -2206,7 +2220,7 @@ address, .contacts {
       vertical-align: middle;
       line-height: 1.15;
     }
-@media (max-height: 600px)  {
+@media (max-height: 600px) and (orientation: portrait) {
   .widget-title{
     margin: 10px 0;
   }

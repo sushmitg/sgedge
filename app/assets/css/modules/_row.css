@@ -1,5 +1,8 @@
 .row {
   @mixin clearfix;
+  #contact-us & {
+    margin-right: -65px;
+  }
   &>div {
     position: relative;
     margin-bottom: 35px;

@@ -25,11 +25,15 @@
   }
 
   & .paragraph {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     p {
-      margin: 0;
+      font-size: 1rem;
+      margin: .7em 0;
       @mixin tablet-portrait-up {
-        margin: .7em;
+        margin: 1em 0;
+      }
+      @mixin tablet-landscape-up {
+        font-size: 1.125rem;
       }
     }
   }
