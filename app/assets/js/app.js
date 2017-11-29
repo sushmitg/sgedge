@@ -93,7 +93,7 @@ var msnry = new Masonry(grid, {
   columnWidth: '.grid-item',
   percentPosition: true
 });
-if (is_root) {
+if (is_root || window.location.hostname == "sushmitg.github.io") {
   imagesLoaded( grid ).on( 'progress', function() {
     // layout Masonry after each image loads
     msnry.layout();
