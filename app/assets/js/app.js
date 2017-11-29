@@ -47,7 +47,7 @@ attach(window, 'load', function() {
 var header = document.querySelector('header');
 var logo = header.querySelector('.brand-logo');
 // Check if on Homepage ?
-var is_root = /^\/(?:|index\.html?)$/i.test(location.pathname);
+var is_root = /^\/(?:|index\.html?)$/i.test(location.pathname) || window.location.pathname == "/sgedge/";
 // Add Shrink Logo Scroll Event
 if (is_root) {
   document.addEventListener('scroll', function() {
@@ -93,7 +93,7 @@ var msnry = new Masonry(grid, {
   columnWidth: '.grid-item',
   percentPosition: true
 });
-if (is_root || window.location.pathname == "/sgedge/") {
+if (is_root) {
   imagesLoaded( grid ).on( 'progress', function() {
     // layout Masonry after each image loads
     msnry.layout();
