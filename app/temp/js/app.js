@@ -408,7 +408,7 @@ return getSize;
 __webpack_require__(3);
 __webpack_require__(4);
 var imagesLoaded = __webpack_require__(5);
-var Masonry = __webpack_require__(6);
+var Masonry      = __webpack_require__(6);
 
 function attach(element, listener, ev, tf) {
   if (element.attachEvent) { //if it's <= IE8
@@ -419,23 +419,23 @@ function attach(element, listener, ev, tf) {
 }
 
 function fadeOut(element, startLevel, endLevel, duration, callback) {
-  var fOInt;
-  var op = startLevel;
+  var fOInt, op;
+  op    = startLevel;
   fOInt = setInterval(function() {
     if (op <= endLevel) {
       element.style.opacity = endLevel;
-      element.style.filter = "alpha(opacity = " + endLevel + ")";
+      element.style.filter  = "alpha(opacity = " + endLevel + ")";
       clearInterval(fOInt);
       if (typeof callback == 'function') callback(true);
     } else {
       op -= 0.1;
       element.style.opacity = op;
-      element.style.filter = "alpha(opacity = " + op * 100 + ")";
+      element.style.filter  = "alpha(opacity = " + op * 100 + ")";
     }
   }, duration);
 }
 
-var loader = document.querySelector('.loader');
+var loader   = document.querySelector('.loader');
 var heroText = document.querySelector('.large-hero__text-content');
 if (heroText) {
   heroText.style.opacity = '0';
@@ -451,8 +451,8 @@ attach(window, 'load', function() {
 
 // Shrink Logo on scroll
 // Look for Logo
-var header = document.querySelector('header');
-var logo = header.querySelector('.brand-logo');
+var header  = document.querySelector('header');
+var logo    = header.querySelector('.brand-logo');
 // Check if on Homepage ?
 var is_root = /^\/(?:|index\.html?)$/i.test(location.pathname) || window.location.pathname == "/sgedge/";
 // Add Shrink Logo Scroll Event
@@ -474,12 +474,12 @@ if (is_root) {
 // Reveal on Scroll Animation -- Waypoints.js
 [].forEach.call(document.querySelectorAll('.on-scroll-reveal'), function(el) {
   var animationClass = el.dataset.animation;
-  var offset = el.dataset.offset;
-  var delay = el.dataset.animationdelay;
+  var offset         = el.dataset.offset;
+  var delay          = el.dataset.animationdelay;
   // Add class animated frome Animate.css and
   el.classList.add('animated');
   // opacity to 0 to hide element initially...
-  el.style.opacity = '0';
+  el.style.opacity        = '0';
   el.style.animationDelay = delay;
   // adding on scroll trigger using waypoints.js
   var waypoint = new Waypoint({
@@ -492,7 +492,7 @@ if (is_root) {
   });
 });
 
-var grid = document.querySelector('.grid');
+var grid     = document.querySelector('.grid');
 var gridItem = document.querySelectorAll('.grid-item');
 
 var msnry = new Masonry(grid, {
@@ -525,7 +525,7 @@ if (is_root) {
 // });
 
 [].forEach.call(gridItem, function(el, i) {
-  var offset = el.dataset.offset;
+  var offset   = el.dataset.offset;
   var waypoint = new Waypoint({
     element: el,
     handler: function() {
@@ -557,7 +557,7 @@ if (is_root) {
 // Mobile hamburger Click functionality
 // Look for .hamburger
 var hamburger = document.querySelector(".hamburger");
-var menu = document.querySelector(".menu");
+var menu      = document.querySelector(".menu");
 // On click
 hamburger.addEventListener("click", function() {
   // Toggle class "is-active"
@@ -634,7 +634,7 @@ if (hash) {
   el.addEventListener("click", function(e) {
     e.preventDefault();
     var clickedAnchorURL = this.href.split('#')[0],
-      currentPageURL = window.location.href.split('#')[0];
+        currentPageURL   = window.location.href.split('#')[0];
     if (currentPageURL == clickedAnchorURL) {
       window.location.href = this.href;
       clickTab(this.hash);
@@ -647,7 +647,7 @@ if (hash) {
 // get siblings of any element...
 function getSiblings(elem) {
   var siblings = [];
-  var sibling = elem.parentNode.firstChild;
+  var sibling  = elem.parentNode.firstChild;
   for (; sibling; sibling = sibling.nextSibling) {
     if (sibling.nodeType !== 1 || sibling === elem) continue;
     siblings.push(sibling);
@@ -661,7 +661,7 @@ function getSiblings(elem) {
     var i, vtabcontent, verticaltabs;
     // Get all elements with class="tabcontent" and hide them
     var parentElemRow = getClosest(this, '.row');
-    vtabcontent = parentElemRow.querySelectorAll(".tab__content-v");
+        vtabcontent   = parentElemRow.querySelectorAll(".tab__content-v");
     for (i = 0; i < vtabcontent.length; i++) {
       vtabcontent[i].style.display = "none";
       vtabcontent[i].className = vtabcontent[i].className.replace(" fadeIn", "");
@@ -670,10 +670,10 @@ function getSiblings(elem) {
       var panel = this.parentNode;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
-        panel.style.margin = '0';
+        panel.style.margin    = '0';
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        panel.style.margin = '1em 0';
+        panel.style.margin    = '1em 0';
       }
       var chevron = parentElemRow.querySelector('.module-title span');
       chevron.classList.toggle("icon-chevron-up");
@@ -696,14 +696,14 @@ if (mq.matches && window.location.href.split('#')[0].indexOf('products.html') >=
   [].forEach.call(document.querySelectorAll('.module-title'), function(el) {
     el.addEventListener("click", function() {
       var chevron = this.querySelector('.module-title span');
-      chevron.classList.toggle("icon-chevron-up");
+        chevron.classList.toggle("icon-chevron-up");
       var panel = this.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
-        panel.style.margin = '0';
+        panel.style.margin    = '0';
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        panel.style.margin = '1em 0 0 0';
+        panel.style.margin    = '1em 0 0 0';
       }
     });
   });
@@ -739,9 +739,7 @@ var getClosest = function(elem, selector) {
   for (; elem && elem !== document; elem = elem.parentNode) {
     if (elem.matches(selector)) return elem;
   }
-
   return null;
-
 };
 
 
