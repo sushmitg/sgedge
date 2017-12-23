@@ -105,7 +105,4 @@ footer {
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
-  @mixin tablet-portrait-up {
-    line-height: 2;
-  }
 }

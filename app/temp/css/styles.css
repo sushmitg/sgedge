@@ -1721,11 +1721,6 @@ footer [class^=row__] {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
 }
-@media (min-width: 600px) {
-.footer-hours span {
-    line-height: 2
-}
-  }
 a.external {
   color: #fff;
 	position: relative;
@@ -2025,7 +2020,7 @@ address, .contacts {
       }
 .tab__content {
     display: none;
-    padding: 1.8rem 0 5rem 0;
+    padding: 0 0 3rem 0;
   }
 .tab__content .row--gutters {
       margin-right: -20px;
@@ -2033,12 +2028,16 @@ address, .contacts {
 .tab__content .row--gutters>div {
       padding-right: 20px;
     }
-/* @mixin tablet-portrait-up {
-      padding: 2rem 0;
-    }
-    @mixin tablet-landscape-up {
-      padding: 3rem 1rem;
-    } */
+@media (min-width: 600px) {
+.tab__content {
+      padding: 0.5rem 0 3rem 0
+  }
+  }
+@media (min-width: 900px) {
+.tab__content {
+      padding: 1rem 0 5rem 0
+  }
+  }
 @media (min-width: 1200px) {
       .tab__content .row--gutters {
         margin-right: -50px;
@@ -2216,40 +2215,48 @@ address, .contacts {
       vertical-align: middle;
       line-height: 1.15;
     }
-@media (max-height: 600px) and (orientation: portrait) {
-  .widget-title{
+/* @mixin small-mobile { */
+.widget-title{
     margin: 10px 0;
   }
-  .footer-hours {
+.footer-hours {
     /* IE7 */
-    padding: 10px;
+    padding: 18px;
   }
-    .footer-hours:after {
+.footer-hours:after {
     visibility: hidden;
     display: block;
     content: "";
     clear: both;
     height: 0;
   }
-    .footer-hours * html .clearfix             { zoom: 1; }
-    /* IE6 */
-    .footer-hours *:first-child+html .clearfix { zoom: 1; }
-    .footer-hours div, .footer-hours span {
+.footer-hours * html .clearfix             { zoom: 1; }
+/* IE6 */
+.footer-hours *:first-child+html .clearfix { zoom: 1; }
+.footer-hours div, .footer-hours >span {
       line-height: 1.5;
       font-size: 14px;
       float: left;
       width: 50%;
     }
-    .footer-hours div:nth-child(2n+3):not(:last-child){
+@media (min-width: 900px) {
+.footer-hours div, .footer-hours span {
+        line-height: 2
+    }
+  }
+.footer-hours div:nth-child(2n+3):not(:last-child){
       text-align: right;
     }
-    .footer-hours div:first-child, .footer-hours div:last-child {
+.footer-hours div:first-child, .footer-hours div:last-child {
       width: 100%;
-    }
-    .footer-hours div:last-child {
       text-align: center;
     }
-  .bottom-footer {
-    margin-top: 0.5em;
+.bottom-footer {
+    margin-top: 1em;
+  }
+@media (min-width: 900px) {
+.bottom-footer {
+      margin-top: 2.5em
   }
   }
+/* } */
