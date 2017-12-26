@@ -422,43 +422,28 @@ if (heroText) {
   heroText.style.opacity = '0';
 }
 
+  //last page section Bottom Margin equals to Footer height for Reveal Parallax effect.
+function getStyle(oElm, strCssRule) {
+  var strValue = "";
+  if (document.defaultView && document.defaultView.getComputedStyle) {
+    strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+  } else if (oElm.currentStyle) {
+    strCssRule = strCssRule.replace(/\-(\w)/g, function(strMatch, p1) {
+      return p1.toUpperCase();
+    });
+    strValue = oElm.currentStyle[strCssRule];
+  }
+  return strValue;
+}
+
+var footerHeight = getStyle(document.querySelector('footer'), "height");
+
 window.onload = function (){
   loading_screen.finish();
   heroText.classList += ' fadeInDown';
+  //footer reveal ......
+  document.querySelector('#contact-us').style.marginBottom = footerHeight;
 };
-// function attach(element, listener, ev, tf) {
-//   if (element.attachEvent) { //if it's <= IE8
-//     element.attachEvent("on" + listener, ev);
-//   } else {
-//     element.addEventListener(listener, ev, tf);
-//   }
-// }
-//
-// function fadeOut(element, startLevel, endLevel, duration, callback) {
-//   var fOInt, op;
-//   op    = startLevel;
-//   fOInt = setInterval(function() {
-//     if (op <= endLevel) {
-//       element.style.opacity = endLevel;
-//       element.style.filter  = "alpha(opacity = " + endLevel + ")";
-//       clearInterval(fOInt);
-//       if (typeof callback == 'function') callback(true);
-//     } else {
-//       op -= 0.1;
-//       element.style.opacity = op;
-//       element.style.filter  = "alpha(opacity = " + op * 100 + ")";
-//     }
-//   }, duration);
-// }
-//
-// var loader   = document.querySelector('.loader');
-// attach(window, 'load', function() {
-//   fadeOut(loader, 1, 0, 50, function(cb) {
-//     loader.style.display = 'none';
-//     if (heroText) {
-//     }
-//   });
-// }, false);
 
 
 
@@ -589,22 +574,7 @@ menu.addEventListener("click", function(e) {
   }
 });
 
-//last page section Bottom Margin equals to Footer height for Reveal Parallax effect.
-function getStyle(oElm, strCssRule) {
-  var strValue = "";
-  if (document.defaultView && document.defaultView.getComputedStyle) {
-    strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
-  } else if (oElm.currentStyle) {
-    strCssRule = strCssRule.replace(/\-(\w)/g, function(strMatch, p1) {
-      return p1.toUpperCase();
-    });
-    strValue = oElm.currentStyle[strCssRule];
-  }
-  return strValue;
-}
 
-var footerHeight = getStyle(document.querySelector('footer'), "height");
-document.querySelector('body > *:nth-last-child(4)').style.marginBottom = footerHeight;
 
 //create tabs
 if (document.querySelector('#newProducts')) {
@@ -632,16 +602,16 @@ if (document.querySelector('#newProducts')) {
   });
 });
 
-var hash = window.location.hash;
-
-function clickTab(hash) {
-  window.scrollBy(0, -100);
-  document.querySelector(hash).click();
-}
-
-if (hash) {
-  clickTab(hash);
-}
+// var hash = window.location.hash;
+//
+// function clickTab(hash) {
+//   window.scrollBy(0, -100);
+//   document.querySelector(hash).click();
+// }
+//
+// if (hash) {
+//   clickTab(hash);
+// }
 
 [].forEach.call(document.querySelectorAll("a[href^='products.html']"), function(el) {
   el.addEventListener("click", function(e) {

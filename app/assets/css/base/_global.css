@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 
 body > .inner {
-  display: none;
+  visibility:hidden;
 }
 
 body.pg-loaded > .inner {
-  display: block;
+  visibility:visible;
 }
 
 * {
