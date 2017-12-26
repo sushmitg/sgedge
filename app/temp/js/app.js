@@ -417,9 +417,14 @@ var loading_screen = pw.pleaseWait({
   loadingHtml: "<p class='pg-loading-subtitle'>Paradise Of Printing and Packaging!</p><div class='sk-folding-cube'><div class='sk-cube1 sk-cube'></div><div class='sk-cube2 sk-cube'></div><div class='sk-cube4 sk-cube'></div><div class='sk-cube3 sk-cube'></div></div>"
 });
 
+var heroText = document.querySelector('.large-hero__text-content');
+if (heroText) {
+  heroText.style.opacity = '0';
+}
+
 window.onload = function (){
   loading_screen.finish();
-  // console.log('loaded....');
+  heroText.classList += ' fadeInDown';
 };
 // function attach(element, listener, ev, tf) {
 //   if (element.attachEvent) { //if it's <= IE8
@@ -447,15 +452,10 @@ window.onload = function (){
 // }
 //
 // var loader   = document.querySelector('.loader');
-// var heroText = document.querySelector('.large-hero__text-content');
-// if (heroText) {
-//   heroText.style.opacity = '0';
-// }
 // attach(window, 'load', function() {
 //   fadeOut(loader, 1, 0, 50, function(cb) {
 //     loader.style.display = 'none';
 //     if (heroText) {
-//       heroText.classList += ' fadeInDown';
 //     }
 //   });
 // }, false);
