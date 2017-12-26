@@ -1,46 +1,59 @@
+var pw = require('please-wait');
 require('lazysizes');
 require('../../../node_modules/waypoints/lib/noframework.waypoints.min');
 var imagesLoaded = require('imagesloaded');
 var Masonry      = require('masonry-layout');
 
-function attach(element, listener, ev, tf) {
-  if (element.attachEvent) { //if it's <= IE8
-    element.attachEvent("on" + listener, ev);
-  } else {
-    element.addEventListener(listener, ev, tf);
-  }
-}
+var loading_screen = pw.pleaseWait({
+  logo: "assets/images/sgedge-logo.png",
+  backgroundColor: '#ffffff',
+  loadingHtml: "<p class='pg-loading-subtitle'>Paradise Of Printing and Packaging!</p><div class='sk-folding-cube'><div class='sk-cube1 sk-cube'></div><div class='sk-cube2 sk-cube'></div><div class='sk-cube4 sk-cube'></div><div class='sk-cube3 sk-cube'></div></div>"
+});
 
-function fadeOut(element, startLevel, endLevel, duration, callback) {
-  var fOInt, op;
-  op    = startLevel;
-  fOInt = setInterval(function() {
-    if (op <= endLevel) {
-      element.style.opacity = endLevel;
-      element.style.filter  = "alpha(opacity = " + endLevel + ")";
-      clearInterval(fOInt);
-      if (typeof callback == 'function') callback(true);
-    } else {
-      op -= 0.1;
-      element.style.opacity = op;
-      element.style.filter  = "alpha(opacity = " + op * 100 + ")";
-    }
-  }, duration);
-}
+window.onload = function (){
+  loading_screen.finish();
+  // console.log('loaded....');
+};
+// function attach(element, listener, ev, tf) {
+//   if (element.attachEvent) { //if it's <= IE8
+//     element.attachEvent("on" + listener, ev);
+//   } else {
+//     element.addEventListener(listener, ev, tf);
+//   }
+// }
+//
+// function fadeOut(element, startLevel, endLevel, duration, callback) {
+//   var fOInt, op;
+//   op    = startLevel;
+//   fOInt = setInterval(function() {
+//     if (op <= endLevel) {
+//       element.style.opacity = endLevel;
+//       element.style.filter  = "alpha(opacity = " + endLevel + ")";
+//       clearInterval(fOInt);
+//       if (typeof callback == 'function') callback(true);
+//     } else {
+//       op -= 0.1;
+//       element.style.opacity = op;
+//       element.style.filter  = "alpha(opacity = " + op * 100 + ")";
+//     }
+//   }, duration);
+// }
+//
+// var loader   = document.querySelector('.loader');
+// var heroText = document.querySelector('.large-hero__text-content');
+// if (heroText) {
+//   heroText.style.opacity = '0';
+// }
+// attach(window, 'load', function() {
+//   fadeOut(loader, 1, 0, 50, function(cb) {
+//     loader.style.display = 'none';
+//     if (heroText) {
+//       heroText.classList += ' fadeInDown';
+//     }
+//   });
+// }, false);
 
-var loader   = document.querySelector('.loader');
-var heroText = document.querySelector('.large-hero__text-content');
-if (heroText) {
-  heroText.style.opacity = '0';
-}
-attach(window, 'load', function() {
-  fadeOut(loader, 1, 0, 50, function(cb) {
-    loader.style.display = 'none';
-    if (heroText) {
-      heroText.classList += ' fadeInDown';
-    }
-  });
-}, false);
+
 
 // Shrink Logo on scroll
 // Look for Logo
