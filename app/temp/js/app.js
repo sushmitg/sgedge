@@ -437,15 +437,15 @@ function getStyle(oElm, strCssRule) {
 }
 
 var footerHeight = getStyle(document.querySelector('footer'), "height");
+//footer reveal ......
+document.querySelector('.inner > *:nth-last-child(2)').style.marginBottom = footerHeight;
 
 window.onload = function (){
   loading_screen.finish();
-  heroText.classList += ' fadeInDown';
-  //footer reveal ......
-  document.querySelector('#contact-us').style.marginBottom = footerHeight;
+  if (heroText) {
+    heroText.classList += ' fadeInDown';
+  }
 };
-
-
 
 // Shrink Logo on scroll
 // Look for Logo

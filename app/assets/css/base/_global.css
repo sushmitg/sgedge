@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
-
+::-webkit-scrollbar{
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: $mainRed;
+}
 body > .inner {
   visibility:hidden;
 }
